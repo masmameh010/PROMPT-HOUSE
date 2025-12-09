@@ -4,6 +4,7 @@ import { PROMPTS } from '../data';
 import { AiModel, PromptItem } from '../types';
 import { PromptModal } from '../components/PromptModal';
 import { useLanguage } from '../contexts/LanguageContext';
+import { getOptimizedImageUrl } from '../utils/imageHelper';
 
 export const Collections: React.FC = () => {
   const [selectedModel, setSelectedModel] = useState<AiModel | 'All'>('All');
@@ -104,10 +105,14 @@ export const Collections: React.FC = () => {
                 <div className="relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10" />
                   <img 
-                    src={item.imageUrl} 
+                    src={getOptimizedImageUrl(item.imageUrl)} 
                     alt={item.title} 
                     className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    onError={(e) => {
+                      // Fallback visual jika gambar error/permission denied
+                      e.currentTarget.style.opacity = '0.5';
+                    }}
                   />
                   
                   {/* Hover Overlay Info */}

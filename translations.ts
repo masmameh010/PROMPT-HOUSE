@@ -16,8 +16,8 @@ export const translations = {
       f1_desc: "Akses seluruh library prompt tanpa perlu mendaftar atau login. Langsung copy dan paste.",
       f2_title: "Dukungan Multi-Model",
       f2_desc: "Koleksi terorganisir untuk Gemini, Dreamina, FLUX, Stable Diffusion, dan lainnya.",
-      f3_title: "Selalu Update",
-      f3_desc: "Konten diperbarui secara berkala dan Gratis"
+      f3_title: "Gratis & Terbuka",
+      f3_desc: "Update berkala dan 100% Gratis. Jika bermanfaat, dukungan sukarela Anda adalah bahan bakar semangat kami."
     },
     collections: {
       title: "Koleksi Prompt",
@@ -69,8 +69,8 @@ export const translations = {
       f1_desc: "Access the entire prompt library without signing up or logging in. Just copy and paste.",
       f2_title: "Multi-Model Support",
       f2_desc: "Organized collections for Gemini, Dreamina, FLUX, Stable Diffusion, and others.",
-      f3_title: "Always Updated",
-      f3_desc: "Content regularly updated and Free"
+      f3_title: "Free & Open",
+      f3_desc: "Regular updates and 100% Free. If useful, your voluntary support is the fuel for our passion."
     },
     collections: {
       title: "Prompt Collections",

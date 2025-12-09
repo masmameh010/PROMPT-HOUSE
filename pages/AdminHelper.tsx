@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Copy, Check, Terminal, Image as ImageIcon } from 'lucide-react';
 import { AiModel } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
+import { getOptimizedImageUrl } from '../utils/imageHelper';
 
 export const AdminHelper: React.FC = () => {
   const { t } = useLanguage();
@@ -111,10 +112,11 @@ export const AdminHelper: React.FC = () => {
                   value={formData.imageUrl}
                   onChange={handleChange}
                   className="w-full bg-black/30 border border-white/10 rounded-lg p-3 pl-10 text-white focus:border-primary focus:outline-none"
-                  placeholder="https://res.cloudinary.com/..."
+                  placeholder="https://drive.google.com/file/d/..."
                 />
                 <ImageIcon size={18} className="absolute left-3 top-3.5 text-gray-500" />
               </div>
+              <p className="text-[10px] text-gray-500 mt-1 ml-1">* Support Google Drive & Dropbox Share Links</p>
             </div>
 
             <div>
@@ -189,7 +191,7 @@ export const AdminHelper: React.FC = () => {
               <div className="mt-4 pt-4 border-t border-white/10">
                 <p className="text-xs text-gray-500 mb-2">{t.admin.preview}:</p>
                 <div className="h-32 w-full rounded-lg overflow-hidden bg-black/50 border border-white/5 flex items-center justify-center">
-                  <img src={formData.imageUrl} alt="Preview" className="h-full object-contain" onError={(e) => (e.currentTarget.src = 'https://via.placeholder.com/150?text=Invalid+URL')} />
+                  <img src={getOptimizedImageUrl(formData.imageUrl)} alt="Preview" className="h-full object-contain" onError={(e) => (e.currentTarget.src = 'https://via.placeholder.com/150?text=Invalid+URL')} />
                 </div>
               </div>
             )}

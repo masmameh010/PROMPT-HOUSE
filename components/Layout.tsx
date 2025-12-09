@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, ExternalLink, Heart, ShoppingBag, Home, Layers, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -7,10 +6,21 @@ const LOGO_URL = "https://res.cloudinary.com/imajinasilokal/image/upload/v176524
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
+  const [currentPath, setCurrentPath] = useState(window.location.hash.slice(1).split('?')[0] || '/');
   const { language, setLanguage, t } = useLanguage();
 
-  const isActive = (path: string) => location.pathname === path ? 'text-primary font-bold' : 'text-gray-300 hover:text-white';
+  useEffect(() => {
+    const handleHashChange = () => {
+      const path = window.location.hash.slice(1).split('?')[0] || '/';
+      setCurrentPath(path);
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    // Initial set
+    handleHashChange();
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const isActive = (path: string) => currentPath === path ? 'text-primary font-bold' : 'text-gray-300 hover:text-white';
 
   const toggleLanguage = () => {
     setLanguage(language === 'id' ? 'en' : 'id');
@@ -23,22 +33,22 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to="/" className="flex-shrink-0 flex items-center gap-3 group">
+            <a href="#/" className="flex-shrink-0 flex items-center gap-3 group">
               <img src={LOGO_URL} alt="Imajinasi Lokal" className="h-12 w-auto object-contain transition-transform group-hover:scale-105" />
               <div className="hidden md:block">
                 <h1 className="text-xl font-bold tracking-tighter">IMAJINASI LOKAL</h1>
                 <p className="text-[10px] text-gray-400 tracking-widest">PROMPT HOUSE</p>
               </div>
-            </Link>
+            </a>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/" className={`flex items-center gap-2 transition-colors ${isActive('/')}`}>
+              <a href="#/" className={`flex items-center gap-2 transition-colors ${isActive('/')}`}>
                 <Home size={18} /> {t.nav.home}
-              </Link>
-              <Link to="/collections" className={`flex items-center gap-2 transition-colors ${isActive('/collections')}`}>
+              </a>
+              <a href="#/collections" className={`flex items-center gap-2 transition-colors ${isActive('/collections')}`}>
                 <Layers size={18} /> {t.nav.collections}
-              </Link>
+              </a>
               <a 
                 href="https://lynk.id/imajinasilokal1" 
                 target="_blank" 
@@ -94,20 +104,20 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         {isMenuOpen && (
           <div className="md:hidden glass-panel border-t border-white/10">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <Link 
-                to="/" 
+              <a 
+                href="#/" 
                 onClick={() => setIsMenuOpen(false)}
                 className="block px-3 py-4 text-base font-medium text-white hover:bg-white/10 rounded-md"
               >
                 {t.nav.home}
-              </Link>
-              <Link 
-                to="/collections" 
+              </a>
+              <a 
+                href="#/collections" 
                 onClick={() => setIsMenuOpen(false)}
                 className="block px-3 py-4 text-base font-medium text-white hover:bg-white/10 rounded-md"
               >
                 {t.nav.collections}
-              </Link>
+              </a>
               <a 
                 href="https://lynk.id/imajinasilokal1" 
                 target="_blank" 
