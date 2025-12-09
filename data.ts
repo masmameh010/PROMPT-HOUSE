@@ -9,14 +9,15 @@ import { AiModel, PromptItem } from './types';
 export const PROMPTS: PromptItem[] = [
   {
     id: '1',
-    title: 'Neon Samurai Cyberpunk',
-    model: AiModel.FLUX,
-    subModel: 'Flux.1',
-    imageUrl: 'https://picsum.photos/seed/cyberpunk/800/1000', // Replace with your Cloudinary URL
-    prompt: 'A futuristic samurai standing in neon rain, cyberpunk city background, glowing katana, intricate armor details, cinematic lighting, 8k resolution.',
-    negativePrompt: 'blurry, low quality, distorted face, extra limbs',
-    dateAdded: '2023-10-27',
-    tags: ['Cyberpunk', 'Sci-Fi', 'Character']
+    title: 'Pools',
+    model: AiModel.Gemini,
+    subModel: 'Nano Banana 2.5',
+    imageUrl: 'https://imgur.com/gallery/new-prompt-I0LoGXQ#YSk7iFs', // Replace with your Cloudinary URL
+    prompt: 'A casual snapshot style, featuring a fair complexion, cool-toned skin, and a fresh, elegant makeup look. A high-profile internet celebrity with an hourglass figure [Uploaded image] , she wears a one-shoulder off-white one-piece swimsuit with a single shoulder strap and a cutout waist, highlighting her body lines. The high-cut swimsuit is paired with a simple, delicate necklace. She poses with a sweet and elegant expression using a casual filter, at a popular rooftop pool. Standing in the pool against a backdrop of a city skyline, the photo adds a touch of everyday life. She looks directly at the camera, using a first-person perspective with her legs close to her body and a low angle.
+',
+    negativePrompt: '-',
+    dateAdded: '2025-12-09',
+    tags: ['Realistic', 'People', 'Character']
   },
   {
     id: '2',
