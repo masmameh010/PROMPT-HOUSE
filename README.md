@@ -1,20 +1,33 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# IMAJINASI LOKAL - PROMPT HOUSE
 
-# Run and deploy your AI Studio app
+Web app untuk berbagi prompt AI (Midjourney, Gemini, Flux, dll) tanpa login, dengan dukungan multi-bahasa.
 
-This contains everything you need to run your app locally.
+## Cara Update Konten (Prompt Baru)
 
-View your app in AI Studio: https://ai.studio/apps/drive/1wqXqnjfJ_T02_erXHgpO_-D012bMRtH6
+Anda tidak perlu coding untuk menambah prompt. Cukup edit satu file:
 
-## Run Locally
+1. Buka file `data.ts`.
+2. Di bagian `PROMPTS`, tambahkan data prompt baru.
+3. (Opsional) Gunakan fitur **Admin Helper** di website lokal Anda (`/admin-helper`) untuk membuat kode snippet secara otomatis, lalu copy-paste ke `data.ts`.
+4. Commit dan Push ke GitHub. Vercel/Netlify akan otomatis mendeploy ulang website Anda.
 
-**Prerequisites:**  Node.js
+## Instalasi & Menjalankan Lokal
 
+1. Clone repo ini.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Jalankan server development:
+   ```bash
+   npm run dev
+   ```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Deploy
+
+Project ini siap di-deploy ke Vercel, Netlify, atau Cloudflare Pages.
+
+1. Push ke GitHub.
+2. Import project di dashboard Vercel/Netlify.
+3. Framework preset akan otomatis terdeteksi sebagai **Vite**.
+4. Deploy!

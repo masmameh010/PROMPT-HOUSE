@@ -17,7 +17,7 @@ export const translations = {
       f2_title: "Dukungan Multi-Model",
       f2_desc: "Koleksi terorganisir untuk Gemini, Dreamina, FLUX, Stable Diffusion, dan lainnya.",
       f3_title: "Selalu Update",
-      f3_desc: "Konten diperbarui secara berkala melalui sistem repositori yang praktis dan transparan."
+      f3_desc: "Konten diperbarui secara berkala dan Gratis"
     },
     collections: {
       title: "Koleksi Prompt",
@@ -70,7 +70,7 @@ export const translations = {
       f2_title: "Multi-Model Support",
       f2_desc: "Organized collections for Gemini, Dreamina, FLUX, Stable Diffusion, and others.",
       f3_title: "Always Updated",
-      f3_desc: "Content regularly updated through a practical and transparent repository system."
+      f3_desc: "Content regularly updated and Free"
     },
     collections: {
       title: "Prompt Collections",
