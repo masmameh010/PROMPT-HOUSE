@@ -60,8 +60,7 @@ Focus on a graceful influencer girl [uploaded image] , exquisite facial features
     model: AiModel.Gemini,
     subModel: 'Nano Banana 2.5',
     imageUrl: 'https://res.cloudinary.com/imajinasilokal/image/upload/v1765541571/dreamina-2025-12-10-5900-A_beautiful_19-year-old_indonesian_influ..._bukbst.jpg',
-    prompt: 'A beautiful 19-year-old indonesian influencer [uploaded image] with an hourglass figure, large bust, and fair skin. The photos feature a whitening and beautifying filter, brown hair, and an outdoor nighttime street scene (background, road, trees, dim lighting) that gives her skin a translucent, ethereal quality, creating a casual, nighttime internet vibe that is both everyday and atmospheric. The photos are taken with a mobile phone style, using everyday filters, and feature a sexy black and white maid-style dress with a sleeveless halter design and ribbon embellishments, shot from a low angle in a side profile.
-',
+    prompt: 'A beautiful 19-year-old indonesian influencer [uploaded image] with an hourglass figure, large bust, and fair skin. The photos feature a whitening and beautifying filter, brown hair, and an outdoor nighttime street scene (background, road, trees, dim lighting) that gives her skin a translucent, ethereal quality, creating a casual, nighttime internet vibe that is both everyday and atmospheric. The photos are taken with a mobile phone style, using everyday filters, and feature a sexy black and white maid-style dress with a sleeveless halter design and ribbon embellishments, shot from a low angle in a side profile.',
     dateAdded: '2025-12-12',
     tags: ['LOKAL']
   },
@@ -72,11 +71,12 @@ Focus on a graceful influencer girl [uploaded image] , exquisite facial features
     model: AiModel.Gemini,
     subModel: 'Nano Banana 2.5',
     imageUrl: 'https://res.cloudinary.com/imajinasilokal/image/upload/v1765541571/dreamina-2025-12-10-5900-A_beautiful_19-year-old_indonesian_influ..._bukbst.jpg',
-    prompt: 'A beautiful 19-year-old indonesian influencer [uploaded image] with an hourglass figure, large bust, and fair skin. The photos feature a whitening and beautifying filter, brown hair, and an outdoor nighttime street scene (background, road, trees, dim lighting) that gives her skin a translucent, ethereal quality, creating a casual, nighttime internet vibe that is both everyday and atmospheric. The photos are taken with a mobile phone style, using everyday filters, and feature a sexy black and white maid-style dress with a sleeveless halter design and ribbon embellishments, shot from a low angle in a side profile.
-',
+    prompt: 'A beautiful 19-year-old indonesian influencer [uploaded image] with an hourglass figure, large bust, and fair skin. The photos feature a whitening and beautifying filter, brown hair, and an outdoor nighttime street scene (background, road, trees, dim lighting) that gives her skin a translucent, ethereal quality, creating a casual, nighttime internet vibe that is both everyday and atmospheric. The photos are taken with a mobile phone style, using everyday filters, and feature a sexy black and white maid-style dress with a sleeveless halter design and ribbon embellishments, shot from a low angle in a side profile.',
     dateAdded: '2025-12-12',
     tags: ['LOKAL']
-  },// <--- Pastikan selalu ada KOMA (,) di sini sebelum menambah item baru
+  },
+    
+    // <--- Pastikan selalu ada KOMA (,) di sini sebelum menambah item baru
   
   // PASTE KODE BARU DARI ADMIN TOOL DI BAWAH SINI
   
