@@ -37,8 +37,7 @@ export const PROMPTS: PromptItem[] = [
     model: AiModel.Gemini,
     subModel: 'Nano Banana PRO',
     imageUrl: 'https://res.cloudinary.com/imajinasilokal/image/upload/v1765541627/Gemini_Generated_Image_vsmqw5vsmqw5vsmq_iwzylf.png',
-    prompt: 'Dramatic lensing, blurry trendy cool portraits and scenes, iconic scene, retro, vintage, sense of presence, déjà vu, emotional atmosphere, moody ambiance, film grain, cinematic look, Dutch angle, hazy aesthetic, soft focus, motion blur, Instagram style, strong perspective, visual impact, alluring, ethereal, dreamcore, Rembrandt lighting, light and shadow rendering, avant-garde artistic aesthetic, rich in detail, sophisticated feel, layered blur blending, masterpiece.
-Focus on a graceful influencer girl [uploaded image] , exquisite facial features, soft style makeup, warm reddish-brown lip color, eyes are soft with a hint of coolness, overall demeanor is calm yet tells a story; perfect curvy and full figure, wearing the clothes from the reference image (halterneck style), arrogant and mischievous expression. The beautiful woman is sitting on an indoor sofa.',
+    prompt: 'Dramatic lensing, blurry trendy cool portraits and scenes, iconic scene, retro, vintage, sense of presence, déjà vu, emotional atmosphere, moody ambiance, film grain, cinematic look, Dutch angle, hazy aesthetic, soft focus, motion blur, Instagram style, strong perspective, visual impact, alluring, ethereal, dreamcore, Rembrandt lighting, light and shadow rendering, avant-garde artistic aesthetic, rich in detail, sophisticated feel, layered blur blending, masterpiece. Focus on a graceful influencer girl [uploaded image] , exquisite facial features, soft style makeup, warm reddish-brown lip color, eyes are soft with a hint of coolness, overall demeanor is calm yet tells a story; perfect curvy and full figure, wearing the clothes from the reference image (halterneck style), arrogant and mischievous expression. The beautiful woman is sitting on an indoor sofa.',
     dateAdded: '2025-12-12',
     tags: ['LOKAL']
   },
@@ -66,17 +65,15 @@ Focus on a graceful influencer girl [uploaded image] , exquisite facial features
   },
     
   {
-    id: '1765541963355',
-    title: 'Selfie Black Maid Costume',
+    id: '1765541963356', 
+    title: 'Selfie Black Maid Costume (Copy)',
     model: AiModel.Gemini,
     subModel: 'Nano Banana 2.5',
     imageUrl: 'https://res.cloudinary.com/imajinasilokal/image/upload/v1765541571/dreamina-2025-12-10-5900-A_beautiful_19-year-old_indonesian_influ..._bukbst.jpg',
     prompt: 'A beautiful 19-year-old indonesian influencer [uploaded image] with an hourglass figure, large bust, and fair skin. The photos feature a whitening and beautifying filter, brown hair, and an outdoor nighttime street scene (background, road, trees, dim lighting) that gives her skin a translucent, ethereal quality, creating a casual, nighttime internet vibe that is both everyday and atmospheric. The photos are taken with a mobile phone style, using everyday filters, and feature a sexy black and white maid-style dress with a sleeveless halter design and ribbon embellishments, shot from a low angle in a side profile.',
     dateAdded: '2025-12-12',
     tags: ['LOKAL']
-  },
-    
-    // <--- Pastikan selalu ada KOMA (,) di sini sebelum menambah item baru
+  }, // <--- Pastikan selalu ada KOMA (,) di sini sebelum menambah item baru
   
   // PASTE KODE BARU DARI ADMIN TOOL DI BAWAH SINI
   

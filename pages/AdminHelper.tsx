@@ -23,17 +23,19 @@ export const AdminHelper: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Fungsi untuk membersihkan teks agar aman masuk ke dalam string JavaScript
+  // Fungsi untuk membersihkan teks agar AMAN 100% masuk ke dalam string JavaScript
   const cleanText = (text: string) => {
+    if (!text) return '';
     return text
-      .replace(/\\/g, '\\\\') // Escape backslash
-      .replace(/'/g, "\\'")   // Escape single quote
-      .replace(/\n/g, '\\n')  // Escape new lines
-      .replace(/\r/g, '');    // Remove carriage returns
+      .replace(/\\/g, '\\\\')       // 1. Escape backslash
+      .replace(/'/g, "\\'")         // 2. Escape single quote
+      .replace(/[\r\n]+/g, ' ')     // 3. PENTING: Ubah Enter/Baris Baru jadi Spasi agar tidak error
+      .trim();                      // 4. Hapus spasi di awal/akhir
   };
 
   const generateSnippet = () => {
-    const id = Date.now().toString(); 
+    // Tambah random number agar ID tidak mungkin kembar walau digenerate cepat
+    const id = Date.now().toString() + Math.floor(Math.random() * 1000).toString(); 
     const today = new Date().toISOString().split('T')[0];
     const tagsArray = formData.tags.split(',').map(t => t.trim()).filter(t => t !== '');
 
