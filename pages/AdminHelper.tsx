@@ -23,20 +23,29 @@ export const AdminHelper: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Fungsi untuk membersihkan teks agar aman masuk ke dalam string JavaScript
+  const cleanText = (text: string) => {
+    return text
+      .replace(/\\/g, '\\\\') // Escape backslash
+      .replace(/'/g, "\\'")   // Escape single quote
+      .replace(/\n/g, '\\n')  // Escape new lines
+      .replace(/\r/g, '');    // Remove carriage returns
+  };
+
   const generateSnippet = () => {
-    const id = Date.now().toString(); // Simple unique ID generation based on timestamp
+    const id = Date.now().toString(); 
     const today = new Date().toISOString().split('T')[0];
     const tagsArray = formData.tags.split(',').map(t => t.trim()).filter(t => t !== '');
 
     const snippet = `  {
     id: '${id}',
-    title: '${formData.title.replace(/'/g, "\\'")}',
+    title: '${cleanText(formData.title)}',
     model: AiModel.${formData.model},
-    subModel: '${formData.subModel}',
-    imageUrl: '${formData.imageUrl}',
-    prompt: '${formData.prompt.replace(/'/g, "\\'")}',${formData.negativePrompt ? `\n    negativePrompt: '${formData.negativePrompt.replace(/'/g, "\\'")}',` : ''}
+    subModel: '${cleanText(formData.subModel)}',
+    imageUrl: '${formData.imageUrl.trim()}',
+    prompt: '${cleanText(formData.prompt)}',${formData.negativePrompt ? `\n    negativePrompt: '${cleanText(formData.negativePrompt)}',` : ''}
     dateAdded: '${today}',
-    tags: [${tagsArray.map(t => `'${t}'`).join(', ')}]
+    tags: [${tagsArray.map(t => `'${cleanText(t)}'`).join(', ')}]
   },`;
 
     setGeneratedCode(snippet);

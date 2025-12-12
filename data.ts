@@ -1,13 +1,11 @@
 import { AiModel, PromptItem } from './types';
 
 // ==============================================================================
-// PETUNJUK CARA UPDATE (BACA INI DULU):
+// PETUNJUK CARA UPDATE:
 // ==============================================================================
-// 1. Buka Menu 'Admin Tool' di website Anda untuk membuat kodenya secara otomatis.
-// 2. Jika edit manual: Jangan lupa TANDA KOMA (,) di akhir kurung kurawal '},'.
-// 3. Jika teks mengandung tanda kutip satu ('), tambahkan backslash (\) di depannya.
-//    Contoh Salah: 'It's beautiful'
-//    Contoh Benar: 'It\'s beautiful'
+// 1. Gunakan Menu 'Admin Tool' di website untuk generate kode otomatis.
+// 2. Pastikan setiap item dibatasi oleh kurung kurawal { ... } dan diakhiri KOMA (,).
+// 3. Paste kode baru di bagian paling bawah array, sebelum penutup ];
 // ==============================================================================
 
 export const PROMPTS: PromptItem[] = [
@@ -16,13 +14,12 @@ export const PROMPTS: PromptItem[] = [
     title: 'Neon Samurai Cyberpunk',
     model: AiModel.FLUX,
     subModel: 'Flux.1',
-    // Contoh link gambar biasa
     imageUrl: 'https://picsum.photos/seed/cyberpunk/800/1000', 
     prompt: 'A futuristic samurai standing in neon rain, cyberpunk city background, glowing katana, intricate armor details, cinematic lighting, 8k resolution.',
     negativePrompt: 'blurry, low quality, distorted face, extra limbs',
     dateAdded: '2023-10-27',
     tags: ['Cyberpunk', 'Sci-Fi', 'Character']
-  }, // <--- JANGAN LUPA KOMA INI
+  },
 
   {
     id: '2',
@@ -78,9 +75,19 @@ export const PROMPTS: PromptItem[] = [
     prompt: 'Minimalist vector logo of a fox, flat design, orange and white, white background, clean lines.',
     dateAdded: '2023-10-22',
     tags: ['Logo', 'Design']
-  } 
+  },
+
+  {
+    id: '1765541140661',
+    title: 'Chinese Clothes On Sofa',
+    model: AiModel.Gemini,
+    subModel: 'Nano Banana 2.5',
+    imageUrl: 'https://res.cloudinary.com/imajinasilokal/image/upload/v1765541121/bananalokal_1765427248561_igp2nr.png',
+    prompt: 'A young Chinese woman wearing glasses, dressed in a modern cheongsam, with gray sheer pantyhose covering her long legs and pointed high heels, sat shyly on a leather chair in a modern living room. She Shyly Smile To Camera, Behind her was a colorful Several anime-style Poster On wall, and warm lighting made her face blush slightly.',
+    dateAdded: '2025-12-12',
+    tags: ['LOKAL']
+  }, // <--- Pastikan selalu ada KOMA (,) di sini sebelum menambah item baru
   
-  // PASTE KODE BARU DARI ADMIN TOOL DI BAWAH SINI (SEBELUM KURUNG SIKU PENUTUP '];')
-  // JANGAN LUPA TAMBAHKAN KOMA (,) DI ITEM SEBELUMNYA (ITEM NO 6 DI ATAS)
+  // PASTE KODE BARU DARI ADMIN TOOL DI BAWAH SINI
   
 ];
