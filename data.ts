@@ -66,11 +66,11 @@ export const PROMPTS: PromptItem[] = [
     
   {
     id: '1765541963356', 
-    title: 'Selfie Black Maid Costume (Copy)',
+    title: 'Chill in Window',
     model: AiModel.Gemini,
     subModel: 'Nano Banana 2.5',
-    imageUrl: 'https://res.cloudinary.com/imajinasilokal/image/upload/v1765541571/dreamina-2025-12-10-5900-A_beautiful_19-year-old_indonesian_influ..._bukbst.jpg',
-    prompt: 'A beautiful 19-year-old indonesian influencer [uploaded image] with an hourglass figure, large bust, and fair skin. The photos feature a whitening and beautifying filter, brown hair, and an outdoor nighttime street scene (background, road, trees, dim lighting) that gives her skin a translucent, ethereal quality, creating a casual, nighttime internet vibe that is both everyday and atmospheric. The photos are taken with a mobile phone style, using everyday filters, and feature a sexy black and white maid-style dress with a sleeveless halter design and ribbon embellishments, shot from a low angle in a side profile.',
+    imageUrl: 'https://res.cloudinary.com/imajinasilokal/image/upload/v1765541575/bananalokal_10_3_rkwhdw.png',
+    prompt: 'A woman [Uploaded image] sits on the wide windowsill of a quiet apartment, her back against the cool glass. Rain streaks down the pane outside. She wears a simple, oversized grey t-shirt, the fabric clinging damply to her skin. Her legs are drawn up, and one hand rests on her knee while the other holds a steaming mug, her gaze directed out the window, lost in thought. The entire image should be rendered to mimic the aesthetic of a high-quality DSLR camera from the early 2000s. This includes heavy pixelation, visible digital noise and grain, very high resolution, clearly porous skin texture, fine hairs on the hands and thighs, muted and desaturated colors, poor contrast, and generally soft or blurry focus. The lighting should appear flat and uneven, a characteristic of modern camera technology that captures the subtle details of skin texture, giving it an authentic, highly nostalgic, and somewhat raw hyper close-up snapshot feel. AR 9:16.',
     dateAdded: '2025-12-12',
     tags: ['LOKAL']
   }, // <--- Pastikan selalu ada KOMA (,) di sini sebelum menambah item baru
