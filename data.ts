@@ -1,24 +1,29 @@
 import { AiModel, PromptItem } from './types';
 
-// INSTRUCTIONS FOR OWNER:
-// To add a new image/prompt:
-// 1. Upload your image to Cloudinary.
-// 2. Copy the Image URL.
-// 3. Add a new object to the 'PROMPTS' array below.
+// ==============================================================================
+// PETUNJUK CARA UPDATE (BACA INI DULU):
+// ==============================================================================
+// 1. Buka Menu 'Admin Tool' di website Anda untuk membuat kodenya secara otomatis.
+// 2. Jika edit manual: Jangan lupa TANDA KOMA (,) di akhir kurung kurawal '},'.
+// 3. Jika teks mengandung tanda kutip satu ('), tambahkan backslash (\) di depannya.
+//    Contoh Salah: 'It's beautiful'
+//    Contoh Benar: 'It\'s beautiful'
+// ==============================================================================
 
 export const PROMPTS: PromptItem[] = [
   {
     id: '1',
-    title: 'Pools',
-    model: AiModel.Gemini,
-    subModel: 'Nano Banana 2.5',
-    imageUrl: 'https://imgur.com/gallery/new-prompt-I0LoGXQ#YSk7iFs', // Replace with your Cloudinary URL
-    prompt: 'A casual snapshot style, featuring a fair complexion, cool-toned skin, and a fresh, elegant makeup look. A high-profile internet celebrity with an hourglass figure [Uploaded image] , she wears a one-shoulder off-white one-piece swimsuit with a single shoulder strap and a cutout waist, highlighting her body lines. The high-cut swimsuit is paired with a simple, delicate necklace. She poses with a sweet and elegant expression using a casual filter, at a popular rooftop pool. Standing in the pool against a backdrop of a city skyline, the photo adds a touch of everyday life. She looks directly at the camera, using a first-person perspective with her legs close to her body and a low angle.
-',
-    negativePrompt: '-',
-    dateAdded: '2025-12-09',
-    tags: ['Realistic', 'People', 'Character']
-  },
+    title: 'Neon Samurai Cyberpunk',
+    model: AiModel.FLUX,
+    subModel: 'Flux.1',
+    // Contoh link gambar biasa
+    imageUrl: 'https://picsum.photos/seed/cyberpunk/800/1000', 
+    prompt: 'A futuristic samurai standing in neon rain, cyberpunk city background, glowing katana, intricate armor details, cinematic lighting, 8k resolution.',
+    negativePrompt: 'blurry, low quality, distorted face, extra limbs',
+    dateAdded: '2023-10-27',
+    tags: ['Cyberpunk', 'Sci-Fi', 'Character']
+  }, // <--- JANGAN LUPA KOMA INI
+
   {
     id: '2',
     title: 'Abstract Fluid Dreams',
@@ -29,6 +34,7 @@ export const PROMPTS: PromptItem[] = [
     dateAdded: '2023-10-26',
     tags: ['Abstract', 'Artistic']
   },
+
   {
     id: '3',
     title: 'Cozy Coffee Shop Anime Style',
@@ -40,6 +46,7 @@ export const PROMPTS: PromptItem[] = [
     dateAdded: '2023-10-25',
     tags: ['Anime', 'Scenery', 'Cozy']
   },
+
   {
     id: '4',
     title: 'Hyper-realistic Portrait',
@@ -50,6 +57,7 @@ export const PROMPTS: PromptItem[] = [
     dateAdded: '2023-10-24',
     tags: ['Portrait', 'Realistic']
   },
+
   {
     id: '5',
     title: 'Surreal Space Whale',
@@ -60,6 +68,7 @@ export const PROMPTS: PromptItem[] = [
     dateAdded: '2023-10-23',
     tags: ['Space', 'Surreal', 'Nature']
   },
+
   {
     id: '6',
     title: 'Minimalist Logo Vector',
@@ -69,5 +78,9 @@ export const PROMPTS: PromptItem[] = [
     prompt: 'Minimalist vector logo of a fox, flat design, orange and white, white background, clean lines.',
     dateAdded: '2023-10-22',
     tags: ['Logo', 'Design']
-  }
+  } 
+  
+  // PASTE KODE BARU DARI ADMIN TOOL DI BAWAH SINI (SEBELUM KURUNG SIKU PENUTUP '];')
+  // JANGAN LUPA TAMBAHKAN KOMA (,) DI ITEM SEBELUMNYA (ITEM NO 6 DI ATAS)
+  
 ];
