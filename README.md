@@ -4,12 +4,17 @@ Web app untuk berbagi prompt AI (Midjourney, Gemini, Flux, dll) tanpa login, den
 
 ## Cara Update Konten (Prompt Baru)
 
-Anda tidak perlu coding untuk menambah prompt. Cukup edit satu file:
+Website ini menggunakan sistem "Flat File Database" menggunakan JSON.
 
-1. Buka file `data.ts`.
-2. Di bagian `PROMPTS`, tambahkan data prompt baru.
-3. (Opsional) Gunakan fitur **Admin Helper** di website lokal Anda (`/admin-helper`) untuk membuat kode snippet secara otomatis, lalu copy-paste ke `data.ts`.
-4. Commit dan Push ke GitHub. Vercel/Netlify akan otomatis mendeploy ulang website Anda.
+1. Buka halaman **Admin Tool** di website (`/admin-helper`).
+2. Isi form dengan data prompt baru (Judul, URL Gambar, Prompt, dll).
+3. Klik **Tambah ke Tabel**. Lakukan ini untuk semua prompt yang ingin ditambahkan.
+4. Klik tombol **DOWNLOAD DATABASE**. Anda akan mendapatkan file `prompts.json`.
+5. Upload/Replace file `prompts.json` yang ada di folder `public/` repository ini dengan file yang baru didownload.
+6. Commit dan Push ke GitHub.
+
+### Cara Manual
+Jika ingin mengedit manual, cukup edit file `public/prompts.json`. Pastikan format JSON valid.
 
 ## Instalasi & Menjalankan Lokal
 

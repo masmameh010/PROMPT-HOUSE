@@ -73,28 +73,6 @@ export const PROMPTS: PromptItem[] = [
     prompt: 'A woman [Uploaded image] sits on the wide windowsill of a quiet apartment, her back against the cool glass. Rain streaks down the pane outside. She wears a simple, oversized grey t-shirt, the fabric clinging damply to her skin. Her legs are drawn up, and one hand rests on her knee while the other holds a steaming mug, her gaze directed out the window, lost in thought. The entire image should be rendered to mimic the aesthetic of a high-quality DSLR camera from the early 2000s. This includes heavy pixelation, visible digital noise and grain, very high resolution, clearly porous skin texture, fine hairs on the hands and thighs, muted and desaturated colors, poor contrast, and generally soft or blurry focus. The lighting should appear flat and uneven, a characteristic of modern camera technology that captures the subtle details of skin texture, giving it an authentic, highly nostalgic, and somewhat raw hyper close-up snapshot feel. AR 9:16.',
     dateAdded: '2025-12-12',
     tags: ['LOKAL']
-  },
-  
-  {
-    id: '1765542862005689',
-    title: 'White Sexy Girl',
-    model: AiModel.Gemini,
-    subModel: 'Nano Banana 2.5',
-    imageUrl: 'https://res.cloudinary.com/imajinasilokal/image/upload/v1765541583/bananalokal_27_1_kvak5k.png',
-    prompt: 'Everyday snapshot style: delicate, porcelain-like skin, cool-toned fair complexion, fresh and elegant makeup, hourglass figure [uploaded image] , wearing a white halter-neck nurse-themed dress with red ribbons, red lines, and red cross patterns. The hem features a red-edged ruffle design. Random poses, random angles, high-value looks, cute expressions, clear and bright eyes, a first-love vibe, natural, relaxed, and casual expression. A warm and healing wood-style interior space, the room mainly furnished with light wood furniture, including rattan chairs, wooden storage cabinets, and shelves with grilles. The walls are light-colored, creating a fresh and soft overall atmosphere. Books, decorative paintings, and other small items are displayed on the shelves, with green plants in the corners, giving it a lively feel. Sitting on a high stool, looking directly at the camera, the low-angle shot creates a powerful and beautiful image.',
-    dateAdded: '2025-12-12',
-    tags: []
-  }, 
-  
-  {
-    id: '1765542945709639',
-    title: 'Pool White Lokal Girl',
-    model: AiModel.Gemini,
-    subModel: 'Nano Banana 2.5',
-    imageUrl: 'https://res.cloudinary.com/imajinasilokal/image/upload/v1765541585/bananalokal_13_2_oitsxf.png',
-    prompt: 'A casual snapshot style, featuring a fair complexion, cool-toned skin, and a fresh, elegant makeup look. A high-profile internet celebrity with an hourglass figure [Uploaded image] , she wears a one-shoulder off-white one-piece swimsuit with a single shoulder strap and a cutout waist, highlighting her body lines. The high-cut swimsuit is paired with a simple, delicate necklace. She poses with a sweet and elegant expression using a casual filter, at a popular rooftop pool. Standing in the pool against a backdrop of a city skyline, the photo adds a touch of everyday life. She looks directly at the camera, using a first-person perspective with her legs close to her body and a low angle.',
-    dateAdded: '2025-12-12',
-    tags: []
   }, // <--- Pastikan selalu ada KOMA (,) di sini sebelum menambah item baru
   
   // PASTE KODE BARU DARI ADMIN TOOL DI BAWAH SINI
