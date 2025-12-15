@@ -1,6 +1,65 @@
 
 [
-  
+  {
+  "id": "1765843136701",
+  "title": "Pakaian Biru ",
+  "model": "Gemini",
+  "subModel": "Nano Banana 2.5",
+  "imageUrl": "https://cdn.discordapp.com/attachments/1450274866354847917/1450275014682349729/bananalokal_1765806611285.png?ex=6941f15c&is=69409fdc&hm=cf38ac9ce9509810886c3cc1845536fa07201808ee5392413b49b1946292b1e4&",
+  "prompt": "A beautiful, long-faced Eastern woman [uploaded image], alluring, slightly plump, with an hourglass figure, full and rounded hips, realistically depicted with her hair slicked back in the wind. She has large eyes, a high nose, wears a tight-fitting blue floral linen top, her long hair draped over her shoulders, the clothes wrinkled, and carries a black bag on her shoulder, wearing black pants. The scene is a small town street scene, close-up and extreme close-ups. The image is enhanced with beauty filters, skin smoothing, and dark circles, creating a cinematic feel. 9:16",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-15",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "Masmameh",
+  "authorUrl": ""
+},
+  {
+  "id": "1765843086634",
+  "title": "Bersiap Tidur",
+  "model": "Gemini",
+  "subModel": "Nano Banana 2.5",
+  "imageUrl": "https://cdn.discordapp.com/attachments/1450274866354847917/1450275015634452510/bananalokal_1765805905102.png?ex=6941f15c&is=69409fdc&hm=6f0e576e3cf5485c38295b10351995943ae6d2e6b64bbc5ff7ff40b304f38e4e&",
+  "prompt": "An 18-year-old Chinese girl [uploaded image] with long, flowing hair is in her dormitory, wearing fitted black leggings and white stockings. She has an hourglass figure and is getting ready for bed, climbing up to her upper bunk. Her upper body is already on the top bunk, her legs at the very top of the ladder. The shot is taken from a close-up, upward angle, using a flash. The bed shows normal wear and tear; it's a double-layered green-painted iron pipe bed. The upper bunk has a summer blanket and a pillow. The camera angle is directly behind the model. The image boasts extremely high detail and texture, clear lines, ultra-high definition, high resolution, cinematic quality, and 32K high-definition image quality. The aspect ratio is 9:16.",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-15",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "Masmameh",
+  "authorUrl": ""
+},
+  {
+  "id": "1765842999973",
+  "title": "in Classroom She Squat",
+  "model": "Gemini",
+  "subModel": "Nano Banana 2.5",
+  "imageUrl": "https://cdn.discordapp.com/attachments/1450274866354847917/1450275013445025914/bananalokal_147_1.png?ex=6941f15c&is=69409fdc&hm=d5ea63638051ffc994ab5d05d2020ad9745447c5d537d85dd4a4382c7c4599d2&",
+  "prompt": "Ultra-high definition, a school classroom scene, featuring a young  woman [uploaded image]. Her eyes are slightly open, slightly squinted, her brows are slightly furrowed, and she has a few beads of sweat. She is crouching, her hands resting against a white wall, seemingly in pain from illness. She has long, straight black hair, an oval face, clear features, and slightly pursed lips. The lighting on her face is natural and soft, and her skin texture appears realistic. She wears a light white long-sleeved shirt with black vertical stripes, paired with a brown and black plaid pleated skirt, white stockings, and black casual shoes. This photo was taken with a mediocre iPhone (the phone itself should not be visible). The angle is awkward, the composition is poor, and the lighting is inadequate. It's a casual snapshot, a candid moment. The low-angle shot, close-up focusing on her legs, is from behind, and she is turning her head to look at the camera.",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-15",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "Masmameh",
+  "authorUrl": ""
+},
+  {
+  "id": "1765842354451",
+  "title": "Cubit-Cubit Berhadiah",
+  "model": "Gemini",
+  "subModel": "Nano Banana 2.5",
+  "imageUrl": "https://cdn.discordapp.com/attachments/1450274866354847917/1450275013067411477/bananalokal_1765839300414.png?ex=6941f15b&is=69409fdb&hm=dba4b9eccdb89db0eb14fa391ab8d7d598d899bfeff19e80657b21fa78dc1d73&",
+  "prompt": "A young woman [uploaded image] with very short hair covering her cheeks, her hairstyle soft and artistic, is dressed in a traditional Chinese court v-neck style, wearing a red satin strapless dress adorned with gold embroidery, pearls, and gemstones, paired with a gold choker and tassel earrings. She wears heavy Tang Dynasty-style makeup and sits in a subway car, feigning anger as she stares at the camera. From her right, shows Other People Hand pinched her cheek with her right hand. The style is a casual snapshot, a close-up of her face taken from above, presenting a realistic sense of life and youthful vitality.\n\njwsd's selected keywords: The movements are spontaneous, the person's expression is natural and random, the skin appears realistic, no skin smoothing, absolutely no soft focus or beautification. Excellent composition, high contrast, a hazy effect, full of atmosphere, high definition in certain areas, darker colors, surreal, impressionistic, high-end, masterpiece, good figure, real shot, realistic background material, absolutely realistic scene, natural light, realistic feel, slight out-of-focus edges, skewed composition with no design sense, not staged. Absolutely no overly refined, no skin-smoothing, no photo-realistic style.",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-15",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "Masmameh",
+  "authorUrl": ""
+},
 {
   "id": "1765842354451",
   "title": "Very Happy Close Up",
