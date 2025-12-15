@@ -1,5 +1,21 @@
 
 [
+  
+{
+  "id": "1765842354451",
+  "title": "Very Happy Close Up",
+  "model": "Gemini",
+  "subModel": "Nano Banana 2.5",
+  "imageUrl": "https://res.cloudinary.com/imajinasilokal/image/upload/v1765842716/bananalokal_131_zyptvv.png",
+  "prompt": "Ultra-high definition, realistic portrait close-up, a candid shot of a young Chinese woman's face [uploaded image]. Soft indoor artificial light illuminates her face, creating a play of light and shadow. She wears white lace clothing, small pearl earrings, an oval face with delicate features, reddish eyes with a beauty mark, bright red lips, and white teeth. Her skin has a smooth, dewy texture. She is laughing with her head tilted back, tears welling in her eyes, her mouth wide open revealing her teeth. The slightly tilted head contrasts with the checkered tile background. Shot from a low angle, the composition emphasizes the emotional expression in this close-up. The overall tone is warm with a slight soft focus, achieved using a warm-toned portrait soft focus filter. The image conveys a strong emotional tension of joyful tears. The image quality has a delicate, film-like feel, giving a powerful visual impact. However, this is a mediocre photo taken with an iPhone; the image has slight motion blur, an awkward angle, poor composition, and a casual snapshot style.",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-15",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "Masmameh",
+  "authorUrl": ""
+},
   {
     "id": "1765541140661",
     "title": "Chinese Clothes On Sofa",
