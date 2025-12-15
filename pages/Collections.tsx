@@ -1,30 +1,37 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Filter, Grid } from 'lucide-react';
-import { PROMPTS } from '../data';
+import { Search, Filter, Grid, AlertTriangle, Loader2 } from 'lucide-react';
 import { AiModel, PromptItem } from '../types';
 import { PromptModal } from '../components/PromptModal';
 import { useLanguage } from '../contexts/LanguageContext';
+import { getOptimizedImageUrl } from '../utils/imageHelper';
+import { usePrompts } from '../hooks/usePrompts';
 
 export const Collections: React.FC = () => {
   const [selectedModel, setSelectedModel] = useState<AiModel | 'All'>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedItem, setSelectedItem] = useState<PromptItem | null>(null);
   const { t } = useLanguage();
+  const { prompts, loading } = usePrompts();
 
   // Derive unique models from enum
   const models = ['All', ...Object.values(AiModel)];
 
   const filteredPrompts = useMemo(() => {
-    return PROMPTS.filter(item => {
+    const safePrompts = Array.isArray(prompts) ? prompts : [];
+
+    return safePrompts.filter(item => {
+      if (!item || !item.title) return false;
+
       const matchesModel = selectedModel === 'All' || item.model === selectedModel;
-      const matchesSearch = 
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-        item.prompt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.tags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
       
-      return matchesModel && matchesSearch;
+      const searchLower = searchQuery.toLowerCase();
+      const titleMatch = item.title.toLowerCase().includes(searchLower);
+      const promptMatch = item.prompt?.toLowerCase().includes(searchLower) || false;
+      const tagsMatch = item.tags?.some(tag => tag.toLowerCase().includes(searchLower)) || false;
+      
+      return matchesModel && (titleMatch || promptMatch || tagsMatch);
     });
-  }, [selectedModel, searchQuery]);
+  }, [selectedModel, searchQuery, prompts]);
 
   return (
     <div className="min-h-screen pb-20">
@@ -39,7 +46,7 @@ export const Collections: React.FC = () => {
                 <Grid className="text-primary" /> {t.collections.title}
               </h1>
               <p className="text-gray-400 text-sm mt-1">
-                {filteredPrompts.length} {t.collections.found}
+                {loading ? 'Memuat database...' : `${filteredPrompts.length} ${t.collections.found}`}
               </p>
             </div>
 
@@ -82,12 +89,19 @@ export const Collections: React.FC = () => {
 
       {/* Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {filteredPrompts.length === 0 ? (
-          <div className="text-center py-20">
-            <p className="text-gray-500 text-xl">{t.collections.noResults}</p>
+        {loading ? (
+          <div className="flex flex-col items-center justify-center py-20">
+            <Loader2 className="h-12 w-12 text-primary animate-spin mb-4" />
+            <p className="text-gray-400">Sedang mengambil data terbaru...</p>
+          </div>
+        ) : filteredPrompts.length === 0 ? (
+          <div className="text-center py-20 bg-white/5 rounded-2xl border border-white/10">
+            <AlertTriangle className="mx-auto h-12 w-12 text-gray-500 mb-4" />
+            <p className="text-gray-400 text-xl font-medium">{t.collections.noResults}</p>
+            <p className="text-gray-600 text-sm mt-2">Coba kata kunci lain atau reset filter</p>
             <button 
               onClick={() => {setSelectedModel('All'); setSearchQuery('')}}
-              className="mt-4 text-primary hover:underline"
+              className="mt-6 px-6 py-2 bg-primary/10 text-primary hover:bg-primary/20 rounded-full font-bold transition-colors"
             >
               {t.collections.reset}
             </button>
@@ -101,13 +115,17 @@ export const Collections: React.FC = () => {
                 className="break-inside-avoid group relative bg-card rounded-xl overflow-hidden cursor-pointer border border-white/5 hover:border-primary/50 transition-all hover:shadow-2xl hover:shadow-primary/10"
               >
                 {/* Image */}
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden aspect-auto">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10" />
                   <img 
-                    src={item.imageUrl} 
+                    src={getOptimizedImageUrl(item.imageUrl)} 
                     alt={item.title} 
-                    className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500 min-h-[200px] bg-white/5"
                     loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.style.opacity = '0.3';
+                      e.currentTarget.src = 'https://via.placeholder.com/400x300?text=No+Image';
+                    }}
                   />
                   
                   {/* Hover Overlay Info */}
@@ -117,7 +135,7 @@ export const Collections: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Always visible info (Mobile friendly) */}
+                {/* Always visible info */}
                 <div className="p-4 bg-card">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="font-semibold text-gray-200 line-clamp-1">{item.title}</h3>

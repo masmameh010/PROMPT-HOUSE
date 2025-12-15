@@ -1,72 +1,80 @@
 import { AiModel, PromptItem } from './types';
 
-// INSTRUCTIONS FOR OWNER:
-// To add a new image/prompt:
-// 1. Upload your image to Cloudinary.
-// 2. Copy the Image URL.
-// 3. Add a new object to the 'PROMPTS' array below.
+// ==============================================================================
+// PETUNJUK CARA UPDATE:
+// ==============================================================================
+// 1. Gunakan Menu 'Admin Tool' di website untuk generate kode otomatis.
+// 2. Pastikan setiap item dibatasi oleh kurung kurawal { ... } dan diakhiri KOMA (,).
+// 3. Paste kode baru di bagian paling bawah array, sebelum penutup ];
+// ==============================================================================
 
 export const PROMPTS: PromptItem[] = [
   {
-    id: '1',
-    title: 'Neon Samurai Cyberpunk',
-    model: AiModel.FLUX,
-    subModel: 'Flux.1',
-    imageUrl: 'https://picsum.photos/seed/cyberpunk/800/1000', // Replace with your Cloudinary URL
-    prompt: 'A futuristic samurai standing in neon rain, cyberpunk city background, glowing katana, intricate armor details, cinematic lighting, 8k resolution.',
-    negativePrompt: 'blurry, low quality, distorted face, extra limbs',
-    dateAdded: '2023-10-27',
-    tags: ['Cyberpunk', 'Sci-Fi', 'Character']
-  },
-  {
-    id: '2',
-    title: 'Abstract Fluid Dreams',
+    id: '1765541140661',
+    title: 'Chinese Clothes On Sofa',
     model: AiModel.Gemini,
-    subModel: 'Nano Banana Pro',
-    imageUrl: 'https://picsum.photos/seed/fluid/800/1000',
-    prompt: 'Swirling liquid colors, abstract expressionism, gold and turquoise, ethereal atmosphere, macro photography style.',
-    dateAdded: '2023-10-26',
-    tags: ['Abstract', 'Artistic']
+    subModel: 'Nano Banana 2.5',
+    imageUrl: 'https://res.cloudinary.com/imajinasilokal/image/upload/v1765541121/bananalokal_1765427248561_igp2nr.png',
+    prompt: 'A young Chinese woman wearing glasses, dressed in a modern cheongsam, with gray sheer pantyhose covering her long legs and pointed high heels, sat shyly on a leather chair in a modern living room. She Shyly Smile To Camera, Behind her was a colorful Several anime-style Poster On wall, and warm lighting made her face blush slightly.',
+    dateAdded: '2025-12-12',
+    tags: ['LOKAL']
   },
+  
   {
-    id: '3',
-    title: 'Cozy Coffee Shop Anime Style',
-    model: AiModel.Illustrious,
-    subModel: 'V1',
-    imageUrl: 'https://picsum.photos/seed/coffee/800/800',
-    prompt: 'Anime style illustration, a cozy coffee shop interior, warm lighting, rain on window, lo-fi aesthetic, highly detailed.',
-    negativePrompt: 'photorealistic, 3d render',
-    dateAdded: '2023-10-25',
-    tags: ['Anime', 'Scenery', 'Cozy']
+    id: '1765541741577',
+    title: 'Dog Mask Girl',
+    model: AiModel.Gemini,
+    subModel: 'Nano Banana 2.5',
+    imageUrl: 'https://res.cloudinary.com/imajinasilokal/image/upload/v1765541580/bananalokal_1765414802115_snzkaa.png',
+    prompt: 'Portrait photography works, focusing on the effects of light and shadow, with rich and layered colors, showcasing a unique artistic atmosphere, sophisticated composition, woman , ball, black and blue, exquisite dog mask, alluring, gold edge effect, close-up of face, upper body lying on the table, playfully sticking out tongue, drool dripping onto the table, beautiful and delicate color matching, rich details, dynamic capture. 9:16',
+    dateAdded: '2025-12-12',
+    tags: ['LOKAL']
   },
+  
   {
-    id: '4',
-    title: 'Hyper-realistic Portrait',
-    model: AiModel.SD,
-    subModel: 'SDXL',
-    imageUrl: 'https://picsum.photos/seed/portrait/800/1200',
-    prompt: 'Close up portrait of an elderly woman with wisdom in her eyes, tribal markings, natural lighting, bokeh background, 85mm lens.',
-    dateAdded: '2023-10-24',
-    tags: ['Portrait', 'Realistic']
+    id: '1765541817235',
+    title: 'Sit On Sofa With Cinematic Light',
+    model: AiModel.Gemini,
+    subModel: 'Nano Banana PRO',
+    imageUrl: 'https://res.cloudinary.com/imajinasilokal/image/upload/v1765541627/Gemini_Generated_Image_vsmqw5vsmqw5vsmq_iwzylf.png',
+    prompt: 'Dramatic lensing, blurry trendy cool portraits and scenes, iconic scene, retro, vintage, sense of presence, déjà vu, emotional atmosphere, moody ambiance, film grain, cinematic look, Dutch angle, hazy aesthetic, soft focus, motion blur, Instagram style, strong perspective, visual impact, alluring, ethereal, dreamcore, Rembrandt lighting, light and shadow rendering, avant-garde artistic aesthetic, rich in detail, sophisticated feel, layered blur blending, masterpiece. Focus on a graceful influencer girl [uploaded image] , exquisite facial features, soft style makeup, warm reddish-brown lip color, eyes are soft with a hint of coolness, overall demeanor is calm yet tells a story; perfect curvy and full figure, wearing the clothes from the reference image (halterneck style), arrogant and mischievous expression. The beautiful woman is sitting on an indoor sofa.',
+    dateAdded: '2025-12-12',
+    tags: ['LOKAL']
   },
+    
   {
-    id: '5',
-    title: 'Surreal Space Whale',
-    model: AiModel.Dreamina,
-    subModel: 'Seedream 4',
-    imageUrl: 'https://picsum.photos/seed/whale/1000/600',
-    prompt: 'A giant whale flying through a nebula in deep space, stars reflecting on skin, bioluminescent glow, majestic.',
-    dateAdded: '2023-10-23',
-    tags: ['Space', 'Surreal', 'Nature']
+    id: '1765541872261',
+    title: 'Pink Rangers is Action',
+    model: AiModel.Gemini,
+    subModel: 'Nano Banana 2.5',
+    imageUrl: 'https://res.cloudinary.com/imajinasilokal/image/upload/v1765541576/bananalokal_1765392180192_jqtil3.png',
+    prompt: 'At home, a beautiful female [uploaded image]  warrior wearing a pink Power Rangers bodysuit adorned with white curves, white mid-length boots, white mid-length gloves, and long black hair. A  man in ordinary casual home clothes stands behind her; only his body from the neck down appears in the shot. The man lifts her by supporting the insides of her knees with separated hands. Her body is suspended in the air, legs Spreads natural, her leg is apart, and lower legs hanging down. She makes the V-sign with both hands, shown in a close-up overhead shot.',
+    dateAdded: '2025-12-12',
+    tags: ['LOKAL']
   },
+      
   {
-    id: '6',
-    title: 'Minimalist Logo Vector',
-    model: AiModel.Grok,
-    subModel: 'V1',
-    imageUrl: 'https://picsum.photos/seed/logo/800/800',
-    prompt: 'Minimalist vector logo of a fox, flat design, orange and white, white background, clean lines.',
-    dateAdded: '2023-10-22',
-    tags: ['Logo', 'Design']
-  }
+    id: '1765541963355',
+    title: 'Selfie Black Maid Costume',
+    model: AiModel.Gemini,
+    subModel: 'Nano Banana 2.5',
+    imageUrl: 'https://res.cloudinary.com/imajinasilokal/image/upload/v1765541571/dreamina-2025-12-10-5900-A_beautiful_19-year-old_indonesian_influ..._bukbst.jpg',
+    prompt: 'A beautiful 19-year-old indonesian influencer [uploaded image] with an hourglass figure, large bust, and fair skin. The photos feature a whitening and beautifying filter, brown hair, and an outdoor nighttime street scene (background, road, trees, dim lighting) that gives her skin a translucent, ethereal quality, creating a casual, nighttime internet vibe that is both everyday and atmospheric. The photos are taken with a mobile phone style, using everyday filters, and feature a sexy black and white maid-style dress with a sleeveless halter design and ribbon embellishments, shot from a low angle in a side profile.',
+    dateAdded: '2025-12-12',
+    tags: ['LOKAL']
+  },
+    
+  {
+    id: '1765541963356', 
+    title: 'Chill in Window',
+    model: AiModel.Gemini,
+    subModel: 'Nano Banana 2.5',
+    imageUrl: 'https://res.cloudinary.com/imajinasilokal/image/upload/v1765541575/bananalokal_10_3_rkwhdw.png',
+    prompt: 'A woman [Uploaded image] sits on the wide windowsill of a quiet apartment, her back against the cool glass. Rain streaks down the pane outside. She wears a simple, oversized grey t-shirt, the fabric clinging damply to her skin. Her legs are drawn up, and one hand rests on her knee while the other holds a steaming mug, her gaze directed out the window, lost in thought. The entire image should be rendered to mimic the aesthetic of a high-quality DSLR camera from the early 2000s. This includes heavy pixelation, visible digital noise and grain, very high resolution, clearly porous skin texture, fine hairs on the hands and thighs, muted and desaturated colors, poor contrast, and generally soft or blurry focus. The lighting should appear flat and uneven, a characteristic of modern camera technology that captures the subtle details of skin texture, giving it an authentic, highly nostalgic, and somewhat raw hyper close-up snapshot feel. AR 9:16.',
+    dateAdded: '2025-12-12',
+    tags: ['LOKAL']
+  }, // <--- Pastikan selalu ada KOMA (,) di sini sebelum menambah item baru
+  
+  // PASTE KODE BARU DARI ADMIN TOOL DI BAWAH SINI
+  
 ];

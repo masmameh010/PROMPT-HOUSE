@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { X, Copy, Check, Tag } from 'lucide-react';
 import { PromptItem } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
+import { getOptimizedImageUrl } from '../utils/imageHelper';
 
 interface PromptModalProps {
   item: PromptItem;
@@ -38,7 +39,7 @@ export const PromptModal: React.FC<PromptModalProps> = ({ item, onClose }) => {
         {/* Image Section */}
         <div className="w-full md:w-1/2 bg-black flex items-center justify-center overflow-hidden">
           <img 
-            src={item.imageUrl} 
+            src={getOptimizedImageUrl(item.imageUrl)} 
             alt={item.title} 
             className="w-full h-full object-contain max-h-[50vh] md:max-h-full"
           />

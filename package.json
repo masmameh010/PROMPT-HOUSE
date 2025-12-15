@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "admin": "node server.js"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
@@ -18,6 +19,9 @@
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "@vitejs/plugin-react": "^4.2.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
     "typescript": "^5.4.2",
     "vite": "^5.1.6"
   }

@@ -1,200 +1,105 @@
-import React, { useState } from 'react';
-import { Copy, Check, Terminal, Image as ImageIcon } from 'lucide-react';
-import { AiModel } from '../types';
+import React from 'react';
+import { Github, ExternalLink, Zap, ShieldCheck, Image as ImageIcon } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export const AdminHelper: React.FC = () => {
   const { t } = useLanguage();
-  const [formData, setFormData] = useState({
-    title: '',
-    model: AiModel.Gemini,
-    subModel: '',
-    imageUrl: '',
-    prompt: '',
-    negativePrompt: '',
-    tags: '',
-  });
 
-  const [generatedCode, setGeneratedCode] = useState('');
-  const [copied, setCopied] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const generateSnippet = () => {
-    const id = Date.now().toString(); // Simple unique ID generation based on timestamp
-    const today = new Date().toISOString().split('T')[0];
-    const tagsArray = formData.tags.split(',').map(t => t.trim()).filter(t => t !== '');
-
-    const snippet = `  {
-    id: '${id}',
-    title: '${formData.title.replace(/'/g, "\\'")}',
-    model: AiModel.${formData.model},
-    subModel: '${formData.subModel}',
-    imageUrl: '${formData.imageUrl}',
-    prompt: '${formData.prompt.replace(/'/g, "\\'")}',${formData.negativePrompt ? `\n    negativePrompt: '${formData.negativePrompt.replace(/'/g, "\\'")}',` : ''}
-    dateAdded: '${today}',
-    tags: [${tagsArray.map(t => `'${t}'`).join(', ')}]
-  },`;
-
-    setGeneratedCode(snippet);
-  };
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(generatedCode);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  // Ganti URL ini dengan URL repo GitHub Anda
+  // Format: https://github.com/[USERNAME]/[REPO_NAME]/issues/new?template=add_prompt.yml
+  // Contoh: https://github.com/danz-25/prompt-house/issues/new?template=add_prompt.yml
+  // Karena saya tidak tahu username Anda, user harus mengeditnya sendiri atau masuk ke tab Issues manual.
+  const GITHUB_ISSUES_LINK = "https://github.com/imajinasilokal/prompt-house/issues/new?template=add_prompt.yml"; 
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      <div className="bg-card border border-white/10 rounded-2xl p-8 shadow-2xl">
-        <div className="flex items-center gap-4 mb-8 border-b border-white/10 pb-6">
-          <div className="p-3 bg-primary/20 rounded-full text-primary">
-            <Terminal size={32} />
+    <div className="max-w-4xl mx-auto px-4 py-12 pb-24">
+      
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-white mb-4 flex justify-center items-center gap-3">
+          <Github className="text-white w-10 h-10" /> 
+          Contributor Panel
+        </h1>
+        <p className="text-xl text-gray-400">
+          Upload & Share Prompt langsung dari GitHub App / Browser HP.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        
+        {/* Card Metode Baru */}
+        <div className="bg-gradient-to-br from-primary/20 to-green-900/20 border border-primary/50 rounded-2xl p-8 flex flex-col relative overflow-hidden group">
+          <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <Zap size={120} />
           </div>
-          <div>
-            <h1 className="text-2xl font-bold text-white">{t.admin.title}</h1>
-            <p className="text-gray-400 text-sm">{t.admin.desc} <code className="bg-black/50 px-2 py-0.5 rounded text-primary">data.ts</code></p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Form Side */}
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-1">{t.admin.labelTitle}</label>
-              <input 
-                type="text" 
-                name="title"
-                value={formData.title}
-                onChange={handleChange}
-                className="w-full bg-black/30 border border-white/10 rounded-lg p-3 text-white focus:border-primary focus:outline-none"
-                placeholder="Contoh: Cyberpunk City"
-              />
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1">{t.admin.labelModel}</label>
-                <select 
-                  name="model"
-                  value={formData.model}
-                  onChange={handleChange}
-                  className="w-full bg-black/30 border border-white/10 rounded-lg p-3 text-white focus:border-primary focus:outline-none"
-                >
-                  {Object.values(AiModel).map(m => (
-                    <option key={m} value={m}>{m}</option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1">{t.admin.labelSubModel}</label>
-                <input 
-                  type="text" 
-                  name="subModel"
-                  value={formData.subModel}
-                  onChange={handleChange}
-                  className="w-full bg-black/30 border border-white/10 rounded-lg p-3 text-white focus:border-primary focus:outline-none"
-                  placeholder="e.g. V5, XL, Nano"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-1">{t.admin.labelUrl}</label>
-              <div className="relative">
-                <input 
-                  type="text" 
-                  name="imageUrl"
-                  value={formData.imageUrl}
-                  onChange={handleChange}
-                  className="w-full bg-black/30 border border-white/10 rounded-lg p-3 pl-10 text-white focus:border-primary focus:outline-none"
-                  placeholder="https://res.cloudinary.com/..."
-                />
-                <ImageIcon size={18} className="absolute left-3 top-3.5 text-gray-500" />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-1">{t.admin.labelPrompt}</label>
-              <textarea 
-                name="prompt"
-                value={formData.prompt}
-                onChange={handleChange}
-                rows={4}
-                className="w-full bg-black/30 border border-white/10 rounded-lg p-3 text-white focus:border-primary focus:outline-none text-sm font-mono"
-                placeholder="Masukkan prompt lengkap..."
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-1">{t.admin.labelNegPrompt}</label>
-              <textarea 
-                name="negativePrompt"
-                value={formData.negativePrompt}
-                onChange={handleChange}
-                rows={2}
-                className="w-full bg-black/30 border border-white/10 rounded-lg p-3 text-white focus:border-primary focus:outline-none text-sm font-mono"
-                placeholder="bad quality, blurry..."
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-1">{t.admin.labelTags}</label>
-              <input 
-                type="text" 
-                name="tags"
-                value={formData.tags}
-                onChange={handleChange}
-                className="w-full bg-black/30 border border-white/10 rounded-lg p-3 text-white focus:border-primary focus:outline-none"
-                placeholder="Sci-fi, Portrait, Colorful"
-              />
-            </div>
-
-            <button 
-              onClick={generateSnippet}
-              className="w-full py-4 mt-4 bg-primary text-black font-bold rounded-xl hover:bg-green-400 transition-colors shadow-lg shadow-primary/20 flex items-center justify-center gap-2"
-            >
-              <Terminal size={20} /> {t.admin.btnGenerate}
-            </button>
-          </div>
-
-          {/* Result Side */}
-          <div className="relative bg-black/50 rounded-xl border border-white/10 p-4 overflow-hidden flex flex-col">
-            <div className="flex justify-between items-center mb-4">
-              <span className="text-xs font-mono text-gray-500 uppercase tracking-widest">{t.admin.output}</span>
-              <button 
-                onClick={copyToClipboard}
-                disabled={!generatedCode}
-                className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-bold transition-all ${
-                  copied 
-                    ? 'bg-green-500 text-black' 
-                    : 'bg-white/10 text-white hover:bg-white/20'
-                } ${!generatedCode && 'opacity-50 cursor-not-allowed'}`}
-              >
-                {copied ? <Check size={14} /> : <Copy size={14} />}
-                {copied ? t.modal.copied : t.admin.copyCode}
-              </button>
+          
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold mb-6">
+              <Zap size={14} /> METODE OTOMATIS (Recommended)
             </div>
             
-            <div className="flex-grow bg-black rounded-lg border border-white/5 p-4 overflow-auto custom-scrollbar">
-              <pre className="text-sm font-mono text-gray-300 whitespace-pre-wrap break-all">
-                {generatedCode || '// ...'}
-              </pre>
-            </div>
+            <h2 className="text-2xl font-bold text-white mb-4">Upload via GitHub Form</h2>
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Cara paling gampang buat pengguna HP! Cukup isi formulir, upload gambar, dan klik Submit. Robot akan otomatis update website buat kamu.
+            </p>
 
-            {formData.imageUrl && (
-              <div className="mt-4 pt-4 border-t border-white/10">
-                <p className="text-xs text-gray-500 mb-2">{t.admin.preview}:</p>
-                <div className="h-32 w-full rounded-lg overflow-hidden bg-black/50 border border-white/5 flex items-center justify-center">
-                  <img src={formData.imageUrl} alt="Preview" className="h-full object-contain" onError={(e) => (e.currentTarget.src = 'https://via.placeholder.com/150?text=Invalid+URL')} />
-                </div>
-              </div>
-            )}
+            <ul className="space-y-3 mb-8 text-sm text-gray-400">
+              <li className="flex gap-2">
+                <ShieldCheck className="text-primary shrink-0" size={18} />
+                Gambar dihosting gratis oleh GitHub
+              </li>
+              <li className="flex gap-2">
+                <ShieldCheck className="text-primary shrink-0" size={18} />
+                Otomatis masuk database JSON
+              </li>
+              <li className="flex gap-2">
+                <ShieldCheck className="text-primary shrink-0" size={18} />
+                Tidak perlu coding sama sekali
+              </li>
+            </ul>
+
+            <div className="mt-auto">
+              <a 
+                href="https://github.com/users/imajinasilokal/projects/1" 
+                target="_blank" 
+                rel="noreferrer"
+                // Catatan: User harus menyesuaikan link ini ke link "New Issue" reponya sendiri
+                // Sebaiknya ganti href di atas menjadi link issues/new?template=add_prompt.yml repository Anda
+                onClick={(e) => {
+                   e.preventDefault();
+                   // Fallback logic jika user belum set link
+                   alert("Silakan buka Repository GitHub Anda -> Tab 'Issues' -> 'New Issue' -> Pilih 'Tambah Prompt Baru'");
+                   window.open('https://github.com', '_blank');
+                }}
+                className="block w-full py-4 bg-primary text-black font-bold text-center rounded-xl hover:bg-green-400 transition-all shadow-lg shadow-green-900/20 flex items-center justify-center gap-2"
+              >
+                Buka Form Upload <ExternalLink size={18} />
+              </a>
+              <p className="text-[10px] text-center mt-3 text-gray-500">
+                *Pastikan kamu sudah login GitHub di browser
+              </p>
+            </div>
           </div>
         </div>
+
+        {/* Card Manual (Legacy) */}
+        <div className="bg-card border border-white/10 rounded-2xl p-8 flex flex-col opacity-60 hover:opacity-100 transition-opacity">
+          <div className="mb-6">
+            <h2 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+              <ImageIcon size={20} /> Metode Manual
+            </h2>
+            <p className="text-sm text-gray-400">
+              Cara lama: Edit file JSON secara manual. Rentan error jika salah ketik koma atau kurung.
+            </p>
+          </div>
+          
+          <div className="space-y-4 text-sm text-gray-500 mt-auto">
+            <p>1. Upload gambar ke folder public/images</p>
+            <p>2. Generate kode JSON</p>
+            <p>3. Paste ke file prompts.json</p>
+            <p>4. Commit changes</p>
+          </div>
+        </div>
+
       </div>
     </div>
   );

@@ -1,0 +1,62 @@
+name: 🚀 Tambah Prompt Baru
+description: Upload gambar dan isi prompt untuk otomatis masuk ke website.
+title: "[PROMPT]: Judul Gambar Disini"
+labels: ["new-prompt"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Judul Gambar
+      description: Judul singkat dan menarik.
+      placeholder: Contoh: Gadis Jawa Cyberpunk
+    validations:
+      required: true
+
+  - type: dropdown
+    id: model
+    attributes:
+      label: Model AI
+      options:
+        - Gemini
+        - Dreamina
+        - FLUX
+        - SD
+        - XL
+        - Grok
+        - Illustrious
+    validations:
+      required: true
+
+  - type: input
+    id: submodel
+    attributes:
+      label: Sub Model / Versi
+      placeholder: Contoh: Nano Banana 2.5, Flux.1 Dev
+    validations:
+      required: false
+
+  - type: textarea
+    id: image_upload
+    attributes:
+      label: Upload Gambar
+      description: Drag & drop gambar ke sini, atau klik bar di bawah ini untuk upload. JANGAN UBAH format kodenya setelah upload.
+      placeholder: Paste gambar disini atau drag & drop...
+    validations:
+      required: true
+
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt Asli
+      description: Copy paste prompt lengkap di sini.
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags / Kategori
+      description: Pisahkan dengan koma.
+      placeholder: LOKAL, INDO, REALISTIC
+    validations:
+      required: false

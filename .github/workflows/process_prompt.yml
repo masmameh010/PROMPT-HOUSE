@@ -1,0 +1,40 @@
+name: Auto Add Prompt from Issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add-prompt:
+    if: contains(github.event.issue.labels.*.name, 'new-prompt')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Process Prompt Issue
+        id: process
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: node scripts/process-issue.js
+
+      - name: Commit & Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 Auto-add prompt: ${{ github.event.issue.title }}"
+          file_pattern: public/prompts.json
+
+      - name: Close Issue
+        uses: peter-evans/close-issue@v3
+        with:
+          comment: "✅ **Mantap Bro!** Prompt udah otomatis masuk ke database dan sedang dideploy. Tunggu 1-2 menit ya!"

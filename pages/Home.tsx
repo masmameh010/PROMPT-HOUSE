@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Database, Download } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -29,12 +28,12 @@ export const Home: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to="/collections" 
+            <a 
+              href="#/collections" 
               className="px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2"
             >
               {t.home.explore} <ArrowRight size={20} />
-            </Link>
+            </a>
             <a 
               href="https://lynk.id/imajinasilokal1" 
               target="_blank" 

@@ -16,8 +16,8 @@ export const translations = {
       f1_desc: "Akses seluruh library prompt tanpa perlu mendaftar atau login. Langsung copy dan paste.",
       f2_title: "Dukungan Multi-Model",
       f2_desc: "Koleksi terorganisir untuk Gemini, Dreamina, FLUX, Stable Diffusion, dan lainnya.",
-      f3_title: "Selalu Update",
-      f3_desc: "Konten diperbarui secara berkala dan Gratis"
+      f3_title: "Gratis & Terbuka",
+      f3_desc: "Update berkala dan 100% Gratis. Jika bermanfaat, dukungan sukarela Anda adalah bahan bakar semangat kami."
     },
     collections: {
       title: "Koleksi Prompt",
@@ -37,19 +37,26 @@ export const translations = {
       rights: "Hak Cipta Dilindungi."
     },
     admin: {
-      title: "Admin Helper Tool",
-      desc: "Isi form ini untuk membuat kode prompt baru, lalu paste ke file",
+      title: "Android / Web Generator",
+      desc: "Isi form, copy kodenya, lalu paste ke file public/prompts.json di GitHub.",
       labelTitle: "Judul Gambar",
       labelModel: "Model AI",
       labelSubModel: "Sub Model / Versi",
-      labelUrl: "Link Cloudinary (Image URL)",
+      labelUrl: "URL Gambar / Path Lokal",
+      urlHelper: "Gunakan: /images/nama-file-kamu.jpg",
       labelPrompt: "Prompt",
       labelNegPrompt: "Negative Prompt (Opsional)",
       labelTags: "Tags (Pisahkan dengan koma)",
-      btnGenerate: "Generate Code Snippet",
-      output: "Output Code",
-      copyCode: "Copy Code",
-      preview: "Preview Gambar"
+      btnGenerate: "1. Generate Kode",
+      output: "2. Salin Kode Ini:",
+      copyCode: "Copy JSON",
+      preview: "Preview Tampilan",
+      step1: "Siapkan Gambar",
+      step1_desc: "Upload foto ke folder 'public/images' di GitHub.",
+      step2: "Isi Form",
+      step2_desc: "Isi data di sini, lalu klik Generate.",
+      step3: "Update JSON",
+      step3_desc: "Copy kode di kanan, paste ke 'public/prompts.json' di GitHub."
     }
   },
   en: {
@@ -69,8 +76,8 @@ export const translations = {
       f1_desc: "Access the entire prompt library without signing up or logging in. Just copy and paste.",
       f2_title: "Multi-Model Support",
       f2_desc: "Organized collections for Gemini, Dreamina, FLUX, Stable Diffusion, and others.",
-      f3_title: "Always Updated",
-      f3_desc: "Content regularly updated and Free"
+      f3_title: "Free & Open",
+      f3_desc: "Regular updates and 100% Free. If useful, your voluntary support is the fuel for our passion."
     },
     collections: {
       title: "Prompt Collections",
@@ -90,19 +97,26 @@ export const translations = {
       rights: "All rights reserved."
     },
     admin: {
-      title: "Admin Helper Tool",
-      desc: "Fill this form to generate new prompt code, then paste it into file",
+      title: "Android / Web Generator",
+      desc: "Fill form, copy code, paste into public/prompts.json on GitHub.",
       labelTitle: "Image Title",
       labelModel: "AI Model",
       labelSubModel: "Sub Model / Version",
-      labelUrl: "Cloudinary Link (Image URL)",
+      labelUrl: "Image URL / Local Path",
+      urlHelper: "Use: /images/your-file-name.jpg",
       labelPrompt: "Prompt",
       labelNegPrompt: "Negative Prompt (Optional)",
       labelTags: "Tags (Comma separated)",
-      btnGenerate: "Generate Code Snippet",
-      output: "Output Code",
-      copyCode: "Copy Code",
-      preview: "Image Preview"
+      btnGenerate: "1. Generate Code",
+      output: "2. Copy This Code:",
+      copyCode: "Copy JSON",
+      preview: "Preview Layout",
+      step1: "Prepare Image",
+      step1_desc: "Upload photo to 'public/images' on GitHub.",
+      step2: "Fill Form",
+      step2_desc: "Fill details here, click Generate.",
+      step3: "Update JSON",
+      step3_desc: "Copy code on right, paste to 'public/prompts.json' on GitHub."
     }
   }
 };
