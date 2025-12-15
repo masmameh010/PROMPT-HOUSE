@@ -35,8 +35,8 @@ export const Collections: React.FC = () => {
 
   return (
     <div className="min-h-screen pb-20">
-      {/* Header & Controls */}
-      <div className="sticky top-20 z-40 bg-darker/95 backdrop-blur-xl border-b border-white/10 pb-4 pt-8">
+      {/* Header & Controls - SAYA UBAH DISINI: Menghapus sticky top-20 agar ikut terscroll */}
+      <div className="pt-8 pb-4 border-b border-white/10 bg-darker">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             

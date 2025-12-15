@@ -4,7 +4,17 @@ Web app untuk berbagi prompt AI (Midjourney, Gemini, Flux, dll) tanpa login, den
 
 ---
 
-## ⚡ PANDUAN METODE BARU (ISSUES AS CMS)
+## 🔗 FORM CONTRIBUTE (UPLOAD DISINI)
+
+Ingin menambahkan Prompt baru beserta gambarnya? Klik link di bawah ini:
+
+### 👉 [KLIK DISINI UNTUK ISI FORM UPLOAD](https://github.com/imajinasilokal/prompt-house/issues/new?template=add_prompt.yml)
+
+*(Pastikan Anda sudah Login ke GitHub)*
+
+---
+
+## ⚡ PANDUAN AWAL (SETUP PERTAMA KALI)
 
 Agar fitur **Upload via GitHub Issues** berjalan lancar, Anda wajib mengaktifkan izin di pengaturan Repository GitHub Anda.
 
@@ -21,15 +31,15 @@ Agar fitur **Upload via GitHub Issues** berjalan lancar, Anda wajib mengaktifkan
 
 ---
 
-## 🚀 CARA UPLOAD PROMPT
+## 🚀 CARA KERJA UPLOAD
 
-### Cara 1: Otomatis (Tanpa Folder Lokal) - Recommended
+### Cara 1: Otomatis (Link di Atas) - Recommended
 Metode ini **TIDAK** membutuhkan penyimpanan file gambar di folder lokal komputer Anda.
-1. Buka tab **Issues** di repo ini.
-2. Klik **New Issue**.
-3. Pilih **🚀 Tambah Prompt Baru**.
-4. Isi form, **drag & drop gambar langsung ke form**, dan Submit.
-5. GitHub akan meng-hosting gambar tersebut secara gratis.
+1. Klik Link **Form Contribute** di atas.
+2. Isi Judul, Model AI, dan Prompt.
+3. **Drag & drop gambar** langsung ke area text (atau klik bar upload di bawahnya).
+4. Klik **Submit New Issue**.
+5. Tunggu 1-2 menit, GitHub Actions akan memproses data dan website akan terupdate otomatis.
 
 ### Cara 2: Manual (Edit JSON)
 1. Edit file `public/prompts.json`.
@@ -38,13 +48,27 @@ Metode ini **TIDAK** membutuhkan penyimpanan file gambar di folder lokal kompute
 
 ---
 
-## ❓ FAQ (Pertanyaan Umum)
+## 🆘 TROUBLESHOOTING: GAGAL PUSH / SAVE TO GITHUB?
 
-**Q: Apakah saya harus upload gambar ke folder `public/images`?**
-A: **Tidak Wajib.** Jika Anda menggunakan "Cara 1 (Issues)", gambar otomatis di-host di server GitHub. Folder `public/images` hanya dibutuhkan jika Anda ingin menyimpan file gambar secara fisik di dalam repo (yang mana lebih ribet untuk pemula).
+Jika Anda mendapatkan error saat mencoba **Save to GitHub** (biasanya error: *rejected* atau *fetch first*), itu karena **Robot GitHub Actions baru saja mengupdate file `prompts.json`**, dan data di komputer/studio Anda tertinggal.
 
-**Q: Kenapa "Save to GitHub" gagal?**
-A: Karena ada update baru dari Robot (GitHub Actions) yang belum masuk ke komputer Anda. Lakukan `git pull` dulu sebelum push.
+**Solusinya (Jalankan di Terminal Studio):**
+
+```bash
+# 1. Simpan perubahan Anda sementara
+git stash
+
+# 2. Ambil data terbaru dari GitHub (termasuk update dari Robot)
+git pull origin main --rebase
+
+# 3. Kembalikan perubahan Anda
+git stash pop
+
+# 4. Upload lagi
+git add .
+git commit -m "Update kode"
+git push origin main
+```
 
 ---
 
