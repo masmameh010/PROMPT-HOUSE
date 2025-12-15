@@ -1,11 +1,13 @@
 import { AiModel, PromptItem } from './types';
 
 // ==============================================================================
-// PETUNJUK CARA UPDATE:
+// PETUNJUK CARA UPDATE (MANUAL):
 // ==============================================================================
-// 1. Gunakan Menu 'Admin Tool' di website untuk generate kode otomatis.
-// 2. Pastikan setiap item dibatasi oleh kurung kurawal { ... } dan diakhiri KOMA (,).
-// 3. Paste kode baru di bagian paling bawah array, sebelum penutup ];
+// 1. Edit file ini ATAU public/prompts.json
+// 2. Untuk "imageUrl", Anda punya 2 pilihan:
+//    a. Link Online (Mudah): "https://cdn.discordapp.com/..." atau "https://github.com/..."
+//    b. File Lokal (Ribet): Upload foto ke folder /public/images/, lalu tulis "/images/nama.jpg"
+// 3. Pastikan format JSON valid (ada koma antar item).
 // ==============================================================================
 
 export const PROMPTS: PromptItem[] = [
@@ -73,8 +75,8 @@ export const PROMPTS: PromptItem[] = [
     prompt: 'A woman [Uploaded image] sits on the wide windowsill of a quiet apartment, her back against the cool glass. Rain streaks down the pane outside. She wears a simple, oversized grey t-shirt, the fabric clinging damply to her skin. Her legs are drawn up, and one hand rests on her knee while the other holds a steaming mug, her gaze directed out the window, lost in thought. The entire image should be rendered to mimic the aesthetic of a high-quality DSLR camera from the early 2000s. This includes heavy pixelation, visible digital noise and grain, very high resolution, clearly porous skin texture, fine hairs on the hands and thighs, muted and desaturated colors, poor contrast, and generally soft or blurry focus. The lighting should appear flat and uneven, a characteristic of modern camera technology that captures the subtle details of skin texture, giving it an authentic, highly nostalgic, and somewhat raw hyper close-up snapshot feel. AR 9:16.',
     dateAdded: '2025-12-12',
     tags: ['LOKAL']
-  }, // <--- Pastikan selalu ada KOMA (,) di sini sebelum menambah item baru
+  },
   
-  // PASTE KODE BARU DARI ADMIN TOOL DI BAWAH SINI
+  // PASTE KODE BARU DI SINI
   
 ];

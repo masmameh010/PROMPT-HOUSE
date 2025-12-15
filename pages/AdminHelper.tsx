@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, ExternalLink, Zap, ShieldCheck, Image as ImageIcon } from 'lucide-react';
+import { Github, ExternalLink, Zap, ShieldCheck, Image as ImageIcon, Cloud } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export const AdminHelper: React.FC = () => {
@@ -7,8 +7,6 @@ export const AdminHelper: React.FC = () => {
 
   // Ganti URL ini dengan URL repo GitHub Anda
   // Format: https://github.com/[USERNAME]/[REPO_NAME]/issues/new?template=add_prompt.yml
-  // Contoh: https://github.com/danz-25/prompt-house/issues/new?template=add_prompt.yml
-  // Karena saya tidak tahu username Anda, user harus mengeditnya sendiri atau masuk ke tab Issues manual.
   const GITHUB_ISSUES_LINK = "https://github.com/imajinasilokal/prompt-house/issues/new?template=add_prompt.yml"; 
 
   return (
@@ -34,26 +32,26 @@ export const AdminHelper: React.FC = () => {
           
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold mb-6">
-              <Zap size={14} /> METODE OTOMATIS (Recommended)
+              <Zap size={14} /> METODE OTOMATIS (Tanpa File Lokal)
             </div>
             
             <h2 className="text-2xl font-bold text-white mb-4">Upload via GitHub Form</h2>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Cara paling gampang buat pengguna HP! Cukup isi formulir, upload gambar, dan klik Submit. Robot akan otomatis update website buat kamu.
+              Cara paling gampang! Tidak perlu folder lokal atau coding. Cukup isi form di GitHub Issues, gambar akan di-hosting otomatis oleh GitHub.
             </p>
 
             <ul className="space-y-3 mb-8 text-sm text-gray-400">
               <li className="flex gap-2">
-                <ShieldCheck className="text-primary shrink-0" size={18} />
-                Gambar dihosting gratis oleh GitHub
+                <Cloud className="text-primary shrink-0" size={18} />
+                <strong>Gambar Hosting Gratis</strong> (di Cloud GitHub)
               </li>
               <li className="flex gap-2">
                 <ShieldCheck className="text-primary shrink-0" size={18} />
-                Otomatis masuk database JSON
+                Tidak perlu upload file ke folder public
               </li>
               <li className="flex gap-2">
                 <ShieldCheck className="text-primary shrink-0" size={18} />
-                Tidak perlu coding sama sekali
+                Otomatis update website dalam 1-2 menit
               </li>
             </ul>
 
@@ -62,11 +60,9 @@ export const AdminHelper: React.FC = () => {
                 href="https://github.com/users/imajinasilokal/projects/1" 
                 target="_blank" 
                 rel="noreferrer"
-                // Catatan: User harus menyesuaikan link ini ke link "New Issue" reponya sendiri
-                // Sebaiknya ganti href di atas menjadi link issues/new?template=add_prompt.yml repository Anda
+                // Logic fallback untuk user
                 onClick={(e) => {
                    e.preventDefault();
-                   // Fallback logic jika user belum set link
                    alert("Silakan buka Repository GitHub Anda -> Tab 'Issues' -> 'New Issue' -> Pilih 'Tambah Prompt Baru'");
                    window.open('https://github.com', '_blank');
                 }}
@@ -75,7 +71,7 @@ export const AdminHelper: React.FC = () => {
                 Buka Form Upload <ExternalLink size={18} />
               </a>
               <p className="text-[10px] text-center mt-3 text-gray-500">
-                *Pastikan kamu sudah login GitHub di browser
+                *Login GitHub diperlukan. Gambar yang diupload di Issue otomatis jadi link publik.
               </p>
             </div>
           </div>
@@ -85,18 +81,26 @@ export const AdminHelper: React.FC = () => {
         <div className="bg-card border border-white/10 rounded-2xl p-8 flex flex-col opacity-60 hover:opacity-100 transition-opacity">
           <div className="mb-6">
             <h2 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
-              <ImageIcon size={20} /> Metode Manual
+              <ImageIcon size={20} /> Metode Edit Manual
             </h2>
             <p className="text-sm text-gray-400">
-              Cara lama: Edit file JSON secara manual. Rentan error jika salah ketik koma atau kurung.
+              Edit langsung file <code>public/prompts.json</code> di GitHub.
             </p>
           </div>
           
           <div className="space-y-4 text-sm text-gray-500 mt-auto">
-            <p>1. Upload gambar ke folder public/images</p>
-            <p>2. Generate kode JSON</p>
-            <p>3. Paste ke file prompts.json</p>
-            <p>4. Commit changes</p>
+            <div className="p-3 bg-black/40 rounded-lg border border-white/5">
+              <p className="text-xs text-gray-400 mb-1 font-bold">OPSI GAMBAR:</p>
+              <ul className="list-disc pl-4 space-y-1">
+                <li>Pakai link luar (Discord/Cloudinary)</li>
+                <li>ATAU Upload file ke folder <code>public/images</code> (Ribet)</li>
+              </ul>
+            </div>
+            
+            <p>1. Buka file <code>public/prompts.json</code></p>
+            <p>2. Klik Edit (Ikon Pensil)</p>
+            <p>3. Tambahkan objek JSON baru</p>
+            <p>4. Commit Changes</p>
           </div>
         </div>
 
