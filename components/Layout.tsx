@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ExternalLink, Heart, ShoppingBag, Home, Layers, Globe } from 'lucide-react';
+import { Menu, X, ExternalLink, Heart, ShoppingBag, Home, Layers, Globe, UploadCloud } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const LOGO_URL = "https://res.cloudinary.com/imajinasilokal/image/upload/v1765247701/LOKAL_TR_psrb0h.png";
@@ -42,13 +42,19 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             </a>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6">
               <a href="#/" className={`flex items-center gap-2 transition-colors ${isActive('/')}`}>
                 <Home size={18} /> {t.nav.home}
               </a>
               <a href="#/collections" className={`flex items-center gap-2 transition-colors ${isActive('/collections')}`}>
                 <Layers size={18} /> {t.nav.collections}
               </a>
+              
+              {/* Admin / Upload Link */}
+              <a href="#/admin-helper" className={`flex items-center gap-2 transition-colors ${isActive('/admin-helper')}`}>
+                <UploadCloud size={18} /> {t.nav.admin}
+              </a>
+
               <a 
                 href="https://lynk.id/imajinasilokal1" 
                 target="_blank" 
@@ -117,6 +123,13 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 className="block px-3 py-4 text-base font-medium text-white hover:bg-white/10 rounded-md"
               >
                 {t.nav.collections}
+              </a>
+              <a 
+                href="#/admin-helper" 
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center gap-2 px-3 py-4 text-base font-medium text-primary hover:bg-white/10 rounded-md"
+              >
+                <UploadCloud size={18} /> {t.nav.admin}
               </a>
               <a 
                 href="https://lynk.id/imajinasilokal1" 

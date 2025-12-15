@@ -1,3 +1,4 @@
+
 [
   {
     "id": "1765541140661",
@@ -7,7 +8,9 @@
     "imageUrl": "https://res.cloudinary.com/imajinasilokal/image/upload/v1765541121/bananalokal_1765427248561_igp2nr.png",
     "prompt": "A young Chinese woman wearing glasses, dressed in a modern cheongsam, with gray sheer pantyhose covering her long legs and pointed high heels, sat shyly on a leather chair in a modern living room. She Shyly Smile To Camera, Behind her was a colorful Several anime-style Poster On wall, and warm lighting made her face blush slightly.",
     "dateAdded": "2025-12-12",
-    "tags": ["LOKAL"]
+    "tags": ["LOKAL"],
+    "author": "Admin",
+    "authorUrl": "https://instagram.com/imajinasi.lokal"
   },
   {
     "id": "1765541741577",
@@ -17,7 +20,8 @@
     "imageUrl": "https://res.cloudinary.com/imajinasilokal/image/upload/v1765541580/bananalokal_1765414802115_snzkaa.png",
     "prompt": "Portrait photography works, focusing on the effects of light and shadow, with rich and layered colors, showcasing a unique artistic atmosphere, sophisticated composition, woman , ball, black and blue, exquisite dog mask, alluring, gold edge effect, close-up of face, upper body lying on the table, playfully sticking out tongue, drool dripping onto the table, beautiful and delicate color matching, rich details, dynamic capture. 9:16",
     "dateAdded": "2025-12-12",
-    "tags": ["LOKAL"]
+    "tags": ["LOKAL"],
+    "author": "Contributor01"
   },
   {
     "id": "1765541817235",

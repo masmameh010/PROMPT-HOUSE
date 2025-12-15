@@ -17,7 +17,8 @@ export interface PromptItem {
   prompt: string;
   negativePrompt?: string;
   tags?: string[];
-  author?: string;
+  author?: string;      // Nama Contributor
+  authorUrl?: string;   // Link Sosmed Contributor (Instagram/Twitter/dll)
   dateAdded: string;
 }
 

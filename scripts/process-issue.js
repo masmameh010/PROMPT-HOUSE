@@ -8,6 +8,7 @@ const __dirname = path.dirname(__filename);
 
 // Helper untuk parsing body issue
 function extractValue(body, sectionTitle) {
+  // Regex mencari teks di antara heading "### Judul" dan heading berikutnya "###"
   const regex = new RegExp(`### ${sectionTitle}\\s+([\\s\\S]*?)(?=###|$)`, 'i');
   const match = body.match(regex);
   return match ? match[1].trim() : '';
@@ -38,16 +39,15 @@ try {
   console.log("Memproses Prompt Baru...");
 
   // 2. Parsing Data
-  // GitHub Issue Template menggunakan format Markdown, kita parsing berdasarkan Label
-  // Karena format yml issue template kadang returnnya beda, kita pakai pendekatan parsing sederhana
-  
-  // Kita asumsikan urutan field sesuai template
   const rawModel = extractValue(issueBody, 'Model AI');
   const rawSubModel = extractValue(issueBody, 'Sub Model / Versi');
+  const rawAuthor = extractValue(issueBody, 'Nama Contributor \\(Opsional\\)'); // Escape tanda kurung
+  const rawAuthorUrl = extractValue(issueBody, 'Link Social Media \\(Opsional\\)'); // Escape tanda kurung
+  
   const rawImageBlock = extractValue(issueBody, 'Upload Gambar');
   const rawPrompt = extractValue(issueBody, 'Prompt Asli');
   const rawTags = extractValue(issueBody, 'Tags / Kategori');
-  const customTitle = extractValue(issueBody, 'Judul Gambar'); // Jika ada field khusus judul
+  const customTitle = extractValue(issueBody, 'Judul Gambar');
 
   // Fallback title jika user lupa ganti judul issue [PROMPT]: ...
   const cleanTitle = (customTitle || issueTitle.replace('[PROMPT]:', '')).trim();
@@ -66,14 +66,20 @@ try {
     subModel: rawSubModel || 'V1',
     imageUrl: imageUrl,
     prompt: rawPrompt,
-    negativePrompt: "", // Optional, bisa ditambah di form jika mau
+    negativePrompt: "", 
     dateAdded: new Date().toISOString().split('T')[0],
-    tags: rawTags ? rawTags.split(',').map(t => t.trim()) : ['LOKAL']
+    tags: rawTags ? rawTags.split(',').map(t => t.trim()) : ['LOKAL'],
+    author: rawAuthor === "_No response_" ? "Anonymous" : rawAuthor || "Anonymous",
+    authorUrl: rawAuthorUrl === "_No response_" ? "" : rawAuthorUrl || ""
   };
 
   // 4. Baca & Update File JSON
   const dbPath = path.join(__dirname, '../public/prompts.json');
-  const fileContent = fs.readFileSync(dbPath, 'utf8');
+  let fileContent = '[]';
+  
+  if (fs.existsSync(dbPath)) {
+      fileContent = fs.readFileSync(dbPath, 'utf8');
+  }
   
   let json = [];
   try {
@@ -93,6 +99,7 @@ try {
   fs.writeFileSync(dbPath, JSON.stringify(json, null, 2));
   
   console.log(`✅ Sukses menambahkan: ${cleanTitle}`);
+  console.log(`👤 Author: ${newItem.author}`);
   console.log(`📸 Image: ${imageUrl}`);
 
 } catch (error) {

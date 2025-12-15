@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Copy, Check, Tag } from 'lucide-react';
+import { X, Copy, Check, Tag, User, ExternalLink } from 'lucide-react';
 import { PromptItem } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getOptimizedImageUrl } from '../utils/imageHelper';
@@ -46,7 +46,7 @@ export const PromptModal: React.FC<PromptModalProps> = ({ item, onClose }) => {
         </div>
 
         {/* Details Section */}
-        <div className="w-full md:w-1/2 p-6 md:p-8 overflow-y-auto custom-scrollbar">
+        <div className="w-full md:w-1/2 p-6 md:p-8 overflow-y-auto custom-scrollbar flex flex-col">
           <div className="flex items-center gap-3 mb-2">
             <span className="px-3 py-1 text-xs font-bold text-black bg-primary rounded-full uppercase tracking-wider">
               {item.model}
@@ -56,7 +56,25 @@ export const PromptModal: React.FC<PromptModalProps> = ({ item, onClose }) => {
             </span>
           </div>
 
-          <h2 className="text-3xl font-bold mb-6 text-white leading-tight">{item.title}</h2>
+          <h2 className="text-3xl font-bold mb-2 text-white leading-tight">{item.title}</h2>
+
+          {/* Author Section */}
+          <div className="flex items-center gap-2 mb-6 text-sm text-gray-400">
+            <User size={14} />
+            <span>by</span>
+            {item.authorUrl ? (
+              <a 
+                href={item.authorUrl} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="text-primary hover:text-white font-medium flex items-center gap-1 transition-colors"
+              >
+                {item.author || "Contributor"} <ExternalLink size={10} />
+              </a>
+            ) : (
+              <span className="font-medium">{item.author || "Imajinasi Lokal"}</span>
+            )}
+          </div>
 
           {/* Prompt Box */}
           <div className="mb-6 space-y-2">
@@ -103,7 +121,7 @@ export const PromptModal: React.FC<PromptModalProps> = ({ item, onClose }) => {
           )}
 
           {/* Metadata */}
-          <div className="pt-6 border-t border-white/10 flex flex-wrap gap-4 justify-between items-center">
+          <div className="mt-auto pt-6 border-t border-white/10 flex flex-wrap gap-4 justify-between items-center">
             <div className="flex flex-wrap gap-2">
               {item.tags?.map(tag => (
                 <span key={tag} className="flex items-center gap-1 text-xs text-gray-500 bg-white/5 px-2 py-1 rounded-md">

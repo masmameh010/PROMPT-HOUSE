@@ -8,7 +8,7 @@ body:
     attributes:
       label: Judul Gambar
       description: Judul singkat dan menarik.
-      placeholder: Contoh: Gadis Jawa Cyberpunk
+      placeholder: "Contoh: Gadis Jawa Cyberpunk"
     validations:
       required: true
 
@@ -31,7 +31,23 @@ body:
     id: submodel
     attributes:
       label: Sub Model / Versi
-      placeholder: Contoh: Nano Banana 2.5, Flux.1 Dev
+      placeholder: "Contoh: Nano Banana 2.5, Flux.1 Dev"
+    validations:
+      required: false
+
+  - type: input
+    id: author_name
+    attributes:
+      label: Nama Contributor (Opsional)
+      placeholder: Nama Panggilan atau Username Kamu
+    validations:
+      required: false
+
+  - type: input
+    id: author_url
+    attributes:
+      label: Link Social Media (Opsional)
+      placeholder: https://instagram.com/username
     validations:
       required: false
 
