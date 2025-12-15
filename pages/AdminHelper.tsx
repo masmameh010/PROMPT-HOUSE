@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, ExternalLink, Zap, ShieldCheck, Image as ImageIcon, Cloud } from 'lucide-react';
+import { Github, ExternalLink, Zap, ShieldCheck, Image as ImageIcon, Cloud, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export const AdminHelper: React.FC = () => {
@@ -7,7 +7,9 @@ export const AdminHelper: React.FC = () => {
 
   // Ganti URL ini dengan URL repo GitHub Anda
   // Format: https://github.com/[USERNAME]/[REPO_NAME]/issues/new?template=add_prompt.yml
-  const GITHUB_ISSUES_LINK = "https://github.com/imajinasilokal/prompt-house/issues/new?template=add_prompt.yml"; 
+  const GITHUB_REPO_URL = "https://github.com/imajinasilokal/prompt-house";
+  const GITHUB_ISSUES_LINK = `${GITHUB_REPO_URL}/issues/new?template=add_prompt.yml`;
+  const GITHUB_ISSUES_FALLBACK = `${GITHUB_REPO_URL}/issues`;
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-12 pb-24">
@@ -55,23 +57,37 @@ export const AdminHelper: React.FC = () => {
               </li>
             </ul>
 
-            <div className="mt-auto">
+            <div className="mt-auto space-y-3">
               <a 
-                href="https://github.com/users/imajinasilokal/projects/1" 
+                href={GITHUB_ISSUES_LINK}
                 target="_blank" 
                 rel="noreferrer"
                 // Logic fallback untuk user
                 onClick={(e) => {
-                   e.preventDefault();
-                   alert("Silakan buka Repository GitHub Anda -> Tab 'Issues' -> 'New Issue' -> Pilih 'Tambah Prompt Baru'");
-                   window.open('https://github.com', '_blank');
+                   // Optional: Bisa tambahkan tracking
                 }}
                 className="block w-full py-4 bg-primary text-black font-bold text-center rounded-xl hover:bg-green-400 transition-all shadow-lg shadow-green-900/20 flex items-center justify-center gap-2"
               >
                 Buka Form Upload <ExternalLink size={18} />
               </a>
+
+              {/* FALLBACK BUTTON */}
+              <div className="bg-black/30 p-3 rounded-lg border border-yellow-500/30 text-center">
+                 <p className="text-[10px] text-yellow-500 mb-2 flex items-center justify-center gap-1">
+                   <AlertCircle size={10} /> Jika tombol di atas Error 404 (Belum Push):
+                 </p>
+                 <a 
+                    href={GITHUB_ISSUES_FALLBACK}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block w-full py-2 bg-white/10 text-white text-xs font-medium rounded hover:bg-white/20 transition-colors"
+                 >
+                    Buka Issue Manual (Backup)
+                 </a>
+              </div>
+
               <p className="text-[10px] text-center mt-3 text-gray-500">
-                *Login GitHub diperlukan. Gambar yang diupload di Issue otomatis jadi link publik.
+                *Login GitHub diperlukan.
               </p>
             </div>
           </div>

@@ -35,8 +35,12 @@ export const Collections: React.FC = () => {
 
   return (
     <div className="min-h-screen pb-20">
-      {/* Header & Controls - SAYA UBAH DISINI: Menghapus sticky top-20 agar ikut terscroll */}
-      <div className="pt-8 pb-4 border-b border-white/10 bg-darker">
+      {/* 
+        Header & Controls
+        NOTE: Class 'relative' memastikan dia mengalir normal (ikut terscroll).
+        JANGAN tambahkan 'sticky' atau 'fixed' di sini.
+      */}
+      <div className="relative pt-8 pb-4 border-b border-white/10 bg-darker z-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             

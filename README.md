@@ -10,7 +10,15 @@ Ingin menambahkan Prompt baru beserta gambarnya? Klik link di bawah ini:
 
 ### 👉 [KLIK DISINI UNTUK ISI FORM UPLOAD](https://github.com/imajinasilokal/prompt-house/issues/new?template=add_prompt.yml)
 
-*(Pastikan Anda sudah Login ke GitHub)*
+### ⚠️ PENTING: JIKA LINK DI ATAS EROR 404
+Jika Anda melihat **Halaman 404 (Not Found)** saat klik link di atas, itu artinya **Anda belum melakukan PUSH kode ini ke GitHub**.
+GitHub membutuhkan file `.github/ISSUE_TEMPLATE/add_prompt.yml` agar link tersebut bekerja.
+
+**Solusi:**
+1. Lakukan `git add .`
+2. Lakukan `git commit -m "Add issue template"`
+3. Lakukan `git push origin main`
+4. Coba klik link lagi.
 
 ---
 
