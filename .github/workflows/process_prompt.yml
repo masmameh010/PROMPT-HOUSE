@@ -31,10 +31,11 @@ jobs:
       - name: Commit & Push Changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "🤖 Auto-add prompt: ${{ github.event.issue.title }}"
-          file_pattern: public/prompts.json
+          commit_message: "🤖 Auto-add prompt & Generate Library MD"
+          # Ubah pattern ini agar menangkap json DAN file markdown (LIBRARY_xx.md)
+          file_pattern: "public/prompts.json *.md"
 
       - name: Close Issue
         uses: peter-evans/close-issue@v3
         with:
-          comment: "✅ **Mantap Bro!** Prompt udah otomatis masuk ke database dan sedang dideploy. Tunggu 1-2 menit ya!"
+          comment: "✅ **Mantap Bro!** Prompt udah otomatis masuk ke database, dan Library Markdown sudah diupdate. Cek file LIBRARY_01.md di homepage repo!"
