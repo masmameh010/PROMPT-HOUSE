@@ -21,9 +21,9 @@ export const usePrompts = () => {
         const data = await response.json();
         
         if (Array.isArray(data)) {
-          // Sort berdasarkan yang terbaru (asumsi ID besar = baru, atau dateAdded)
+          // Sort berdasarkan ID Descending (Terbaru diatas)
+          // Menggunakan parseInt agar "002" > "001" terbaca benar secara matematis
           const sortedData = data.sort((a, b) => {
-             // Coba sort by ID (timestamp) descending
              return Number(b.id) - Number(a.id);
           });
           setPrompts(sortedData);
