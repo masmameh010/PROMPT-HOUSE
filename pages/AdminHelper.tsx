@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Copy, Check, FileJson, Image as ImageIcon, User, Eye, ExternalLink, Github, RefreshCw } from 'lucide-react';
+import { Copy, Check, FileJson, Image as ImageIcon, User, Eye, ExternalLink, Github, RefreshCw, Plus, RotateCcw, Hash } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { AiModel, PromptItem } from '../types';
-import { getOptimizedImageUrl } from '../utils/imageHelper';
 
 export const AdminHelper: React.FC = () => {
   const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
   
-  // Form State
-  const [formData, setFormData] = useState({
+  // Initial State untuk Form
+  const initialFormState = {
     title: '',
     model: 'Gemini' as AiModel,
     subModel: '',
@@ -19,19 +18,68 @@ export const AdminHelper: React.FC = () => {
     tags: '',
     author: '',
     authorUrl: ''
-  });
+  };
 
-  // Generate ID unique based on timestamp
-  const [generatedId, setGeneratedId] = useState(Date.now().toString());
+  // Form State
+  const [formData, setFormData] = useState(initialFormState);
 
-  // Update ID setiap kali komponen dimuat ulang agar unik
+  // ID Management
+  const [generatedId, setGeneratedId] = useState("001");
+  const [lastDbId, setLastDbId] = useState(0); // Melacak ID terakhir di DB real
+  const [localIncrement, setLocalIncrement] = useState(1); // Melacak berapa item dibuat sesi ini
+
+  // 1. Ambil data terakhir dari prompts.json saat load
   useEffect(() => {
-    setGeneratedId(Date.now().toString());
+    const fetchLatestId = async () => {
+      try {
+        const response = await fetch('./prompts.json');
+        const data = await response.json();
+        
+        let maxId = 0;
+        if (Array.isArray(data)) {
+          data.forEach((item: any) => {
+            const numId = parseInt(item.id, 10);
+            if (!isNaN(numId) && numId > maxId) {
+               // Filter: hanya anggap ID sebagai angka urut jika di bawah timestamp (misal < 100000)
+               // atau jika user memang sudah merubah semua ID jadi angka kecil.
+               // Di sini kita ambil max value number apa saja.
+               if (numId < 1700000000000) { // Asumsi ID timestamp pasti besar
+                  maxId = numId;
+               }
+            }
+          });
+        }
+        setLastDbId(maxId);
+        // Set ID awal = Max + 1
+        const nextId = String(maxId + 1).padStart(3, '0');
+        setGeneratedId(nextId);
+      } catch (error) {
+        console.error("Gagal load prompts.json", error);
+      }
+    };
+
+    fetchLatestId();
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  // Fungsi Reset untuk Item Baru (Increment ID)
+  const handleReset = () => {
+    const isConfirmed = !formData.title || window.confirm("Bersihkan form dan buat ID urutan selanjutnya?");
+    if (isConfirmed) {
+      setFormData(initialFormState);
+      
+      // Increment ID local
+      const nextNum = lastDbId + localIncrement + 1;
+      setLocalIncrement(prev => prev + 1);
+      setGeneratedId(String(nextNum).padStart(3, '0'));
+      
+      setCopied(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   // Membuat Object JSON
@@ -68,7 +116,7 @@ export const AdminHelper: React.FC = () => {
           Generator JSON Manual
         </h1>
         <p className="text-gray-400">
-          Cara paling aman & gampang: Isi Form → Copy Kode → Paste di GitHub.
+          ID Otomatis Urut. <span className="text-primary font-bold">Tidak Perlu Refresh.</span>
         </p>
       </div>
 
@@ -79,9 +127,9 @@ export const AdminHelper: React.FC = () => {
             <RefreshCw size={24} />
           </div>
           <div>
-            <h3 className="text-white font-bold text-lg">Data Belum Muncul?</h3>
+            <h3 className="text-white font-bold text-lg">Sinkronisasi Data</h3>
             <p className="text-sm text-gray-400">
-              Jika ada prompt baru di GitHub tapi belum muncul di sini, lakukan <b>Sinkronisasi</b>.
+              Pastikan Anda sudah melakukan pull terbaru agar nomor urut ID tidak bentrok.
             </p>
           </div>
         </div>
@@ -94,6 +142,21 @@ export const AdminHelper: React.FC = () => {
         
         {/* KOLOM KIRI: FORM INPUT */}
         <div className="space-y-6">
+          
+          {/* TOMBOL RESET / NEW ITEM */}
+          <div className="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/10">
+             <div className="flex items-center gap-2 text-gray-400 text-sm font-mono">
+                <Hash size={14} className="text-primary"/>
+                ID Selanjutnya: <span className="text-white bg-black px-2 py-0.5 rounded font-bold text-lg text-primary">{generatedId}</span>
+             </div>
+             <button 
+                onClick={handleReset}
+                className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 rounded-lg text-sm font-bold transition-all"
+             >
+                <Plus size={16} /> Item Baru (Next ID)
+             </button>
+          </div>
+
           <div className="bg-card border border-white/10 rounded-2xl p-6">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <ImageIcon size={20} className="text-primary" /> 1. Isi Detail Gambar
@@ -254,13 +317,25 @@ export const AdminHelper: React.FC = () => {
               <pre className="bg-black/50 p-4 rounded-lg overflow-x-auto text-xs font-mono text-green-400 border border-white/10">
                 {generateJSON()},
               </pre>
-              <button
-                onClick={handleCopy}
-                className="absolute top-2 right-2 bg-primary hover:bg-green-400 text-black px-3 py-1.5 rounded-md text-xs font-bold flex items-center gap-2 transition-all shadow-lg"
-              >
-                {copied ? <Check size={14} /> : <Copy size={14} />}
-                {copied ? "Tersalin!" : "Copy JSON"}
-              </button>
+              <div className="absolute top-2 right-2 flex gap-2">
+                 <button
+                  onClick={handleCopy}
+                  className="bg-primary hover:bg-green-400 text-black px-3 py-1.5 rounded-md text-xs font-bold flex items-center gap-2 transition-all shadow-lg"
+                >
+                  {copied ? <Check size={14} /> : <Copy size={14} />}
+                  {copied ? "Tersalin!" : "Copy JSON"}
+                </button>
+              </div>
+            </div>
+
+            {/* QUICK ACTIONS */}
+            <div className="mt-4 flex justify-end">
+               <button 
+                  onClick={handleReset}
+                  className="text-xs text-gray-400 hover:text-white flex items-center gap-1 hover:underline"
+               >
+                  <RotateCcw size={12}/> Sudah dicopy? Klik untuk buat baru (ID +1)
+               </button>
             </div>
 
             {/* INSTRUCTION */}
@@ -284,9 +359,6 @@ export const AdminHelper: React.FC = () => {
                 >
                   <ExternalLink size={12} /> Klik untuk buka prompts.json langsung
                 </a>
-                <p className="text-[10px] text-gray-500 mt-1">
-                  *Ganti link di atas sesuai username github kamu kalau linknya 404.
-                </p>
               </div>
             </div>
 
