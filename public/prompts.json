@@ -1,6 +1,51 @@
 
 [
   {
+  "id": "1765843267065",
+  "title": "Worm Eye Shot Everyday Life",
+  "model": "Gemini",
+  "subModel": "Nano Banana 2.5",
+  "imageUrl": "https://cdn.discordapp.com/attachments/1450274866354847917/1450275015223148716/bananalokal_1765806280555.png?ex=6941f15c&is=69409fdc&hm=b5f09732f46d0e44c7fb8dbd796268f558e5de11a218a640e0259df3bd3eb350&",
+  "prompt": "A snapshot of everyday life, not meticulously composed or lit, just a casual shot; a female celebrity [uploaded image]. Long, straight black hair, wearing a gray off-the-shoulder crop top and tights; tall, with a perfect figure, an hourglass S-shape. The subject occupies over 80% of the frame, a low-angle macro shot, standing, with a close-up of her legs. Background: maple trees, sky.",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-16",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "Masmameh",
+  "authorUrl": ""
+},
+{
+  "id": "1765843331402",
+  "title": "Baju Bunga Mawar",
+  "model": "Gemini",
+  "subModel": "Nano Banana 2.5",
+  "imageUrl": "https://cdn.discordapp.com/attachments/1450274866354847917/1450275016045363270/bananalokal_1765805548780.png?ex=6941f15c&is=69409fdc&hm=e7a8d9bc1de88b962ed90fe7f969645c59bf911c1b83965865db0d141769b347&",
+  "prompt": "A 19-year-old fair-skinned internet celebrity [uploaded image] with a hot figure and long brown hair flowing slightly in the wind, tied in a high ponytail. She wears a Soft BLue top adorned with three-dimensional floral embellishments, revealing her shoulders, paired with silver earrings and a delicate chain necklace. The background is an outdoor plaza at night, surrounded by trees, with a dimly lit environment, giving the overall \"nighttime snapshot\" feel and a story-telling atmosphere.\n\nThe footage is shot in a mobile phone style, with a slightly retro filter, presented from a mid-range perspective. Her pose is languid, her expression playful and cute, her makeup and lighting natural and spontaneous, her movements relaxed and fluid. The fitted, tailored design accentuates her figure, simple yet sophisticated, exuding a playful and lively charm. Her skin is fair and delicate, with a clear, dewy quality, appearing soft and radiant under the ambient light.\n\nThe image emphasizes dynamism and visual impact, blending minimalism with a pure and alluring quality. Her face is pure and elegant, with a Full Bust style, conforming to the proportions of a classic face shape. The hair and skin details are highlighted, the composition is diverse and the angles are varied, and the overall effect, under soft cinematic lighting and ray tracing, presents a sense of sophistication and storytelling.\n\n(Cinematic lighting: 1.6), (Ray tracing: 1.1), (Hair lighting: 1.5), (Extreme detail: 1.8), (Diverse composition and angles: 1.5), (Optimal solution based on popular online trends: 1.6), (Smooth skin with a cool white texture: 1.9), 32K resolution, IHD, a masterpiece, highest quality setting.",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-16",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "Masmameh",
+  "authorUrl": ""
+},
+{
+  "id": "1765843389546",
+  "title": "Latihan Menari",
+  "model": "Gemini",
+  "subModel": "Nano Banana 2.5",
+  "imageUrl": "https://cdn.discordapp.com/attachments/1450274866354847917/1450275016569655437/bananalokal_1765804983433.png?ex=6941f15c&is=69409fdc&hm=e9880f5b09ba6408e54d4fac4f4e442e8c1f11d293d83458d5f17dcd831da969&",
+  "prompt": "On the Bund in Shanghai, a young Asian woman [Uploaded image], dressed in a grey V-neck sweater, a white inner shirt, a grey pleated skirt, grey stockings, and black platform shoes, leans against a black railing. She has fair skin, beautiful features, and exquisite makeup; her hair is styled in a high ponytail with a few loose strands. The background features historic European-style classical architecture, trees (with autumnal foliage), and moving vehicles. The overall style is a fresh and natural urban travel photography, blending the dark tones of the buildings with the light blue of the sky to create a fashionable and urban atmosphere. The architectural and street elements in the background enrich the image's layers, presenting a clear and vivid outdoor urban landscape. The focus is blurred, using film photography techniques, employing various lens techniques, resulting in a sharp face, high-quality visuals, a strong emotional atmosphere, film grain texture, rich layers, strong visual impact, the aesthetics of light, hair light, hair strand light, side-backlighting, Rembrandt lighting, highlight enhancement, award-winning work, and background blur. A high-kick overhead movement showcases her dance skills.",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-16",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "Masmameh",
+  "authorUrl": ""
+},
+  {
   "id": "1765843136701",
   "title": "Pakaian Biru ",
   "model": "Gemini",
