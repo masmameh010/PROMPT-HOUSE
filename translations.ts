@@ -35,7 +35,6 @@ export const translations = {
     },
     footer: {
       rights: "Hak Cipta Dilindungi."
-      subtitle: "⬇ Follow Kami Lewat Link Di Bawah ini ⬇"
     },
     admin: {
       title: "Android / Web Generator",
@@ -96,7 +95,6 @@ export const translations = {
     },
     footer: {
       rights: "All rights reserved."
-      subtitle: "⬇ Follow Us Via The Link Below ⬇"
     },
     admin: {
       title: "Android / Web Generator",
