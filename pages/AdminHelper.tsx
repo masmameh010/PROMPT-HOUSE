@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Copy, Check, FileJson, Image as ImageIcon, User, Eye, ExternalLink, Github } from 'lucide-react';
+import { Copy, Check, FileJson, Image as ImageIcon, User, Eye, ExternalLink, Github, RefreshCw } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { AiModel, PromptItem } from '../types';
 import { getOptimizedImageUrl } from '../utils/imageHelper';
@@ -70,6 +70,24 @@ export const AdminHelper: React.FC = () => {
         <p className="text-gray-400">
           Cara paling aman & gampang: Isi Form → Copy Kode → Paste di GitHub.
         </p>
+      </div>
+
+      {/* SYNC DATA ALERT */}
+      <div className="mb-8 bg-blue-900/20 border border-blue-500/30 rounded-xl p-4 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <div className="p-3 bg-blue-500/20 rounded-full text-blue-400">
+            <RefreshCw size={24} />
+          </div>
+          <div>
+            <h3 className="text-white font-bold text-lg">Data Belum Muncul?</h3>
+            <p className="text-sm text-gray-400">
+              Jika ada prompt baru di GitHub tapi belum muncul di sini, lakukan <b>Sinkronisasi</b>.
+            </p>
+          </div>
+        </div>
+        <div className="bg-black/50 px-4 py-2 rounded-lg border border-white/10 font-mono text-sm text-yellow-400 whitespace-nowrap">
+           npm run sync
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
