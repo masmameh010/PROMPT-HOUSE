@@ -1,6 +1,81 @@
 
 [
-  {
+{
+  "id": "1765860193166",
+  "title": "Christmas Gift 3",
+  "model": "Gemini",
+  "subModel": "Nano 2.5",
+  "imageUrl": "https://cdn.discordapp.com/attachments/1450274866354847917/1450346651066830918/nanobanana_1765858591587.png?ex=69423413&is=6940e293&hm=ffb359288b00d9940ecf9cf6966b65bf2df6294a21f2791b2245c3b9f2c4f3ed&",
+  "prompt": "Create a 9:16 AR high-end studio photo of a beautiful woman matching the [uploaded image], entirely contained inside a transparent mika packaging box with soft reflective surfaces. She emphasizes a full bust silhouette and wears a champagne gold satin V-neck maxi gown with fluid draping, styled with nude heels. She squats fully inside the mika box, smiling toward the camera. The background includes golden Christmas ornaments, wrapped gifts, subtle snowfall particles, dramatic studio lighting, and a glamorous festive fashion mood.",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-16",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "Admin",
+  "authorUrl": ""
+},
+{
+  "id": "1765860238108",
+  "title": "Christmas Gift 4",
+  "model": "Gemini",
+  "subModel": "Nano 2.5",
+  "imageUrl": "https://cdn.discordapp.com/attachments/1450274866354847917/1450346650659852479/nanobanana_1765858591588.png?ex=69423413&is=6940e293&hm=43cba81d2d7034f3c343bea827aa0ca67e79bb6722a45c4e3de9933cb9ac5e71&",
+  "prompt": "Create a 9:16 AR high-end studio photo of a beautiful woman matching the [uploaded image], completely enclosed inside a tall transparent glass capsule used as luxury Christmas packaging. She features a full bust figure and wears a midnight blue chiffon V-neck maxi gown with a subtle sheen, paired with silver heels. She is squatting fully inside the glass capsule, smiling softly at the camera. The studio background shows frosted pine trees, cool white Christmas lights, soft mist, cinematic lighting, and a refined winter holiday editorial vibe.",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-16",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "Admin",
+  "authorUrl": ""
+},
+{
+  "id": "1765860275209",
+  "title": "Christmas Gift 5",
+  "model": "Gemini",
+  "subModel": "Nano 2.5",
+  "imageUrl": "https://cdn.discordapp.com/attachments/1450274866354847917/1450346650282492126/nanobanana_1765858591589.png?ex=69423413&is=6940e293&hm=ffc4f41c63766df1eed73d3665a17a984d048dcd0575c7e8aab8e59d131eb13b&",
+  "prompt": "Create a 9:16 AR high-end studio photo of a beautiful woman matching the [uploaded image], fully enclosed inside a rigid transparent plastic shell packaging with structured contours, ensuring no body parts extend outside. She highlights a full bust silhouette and wears a black satin V-neck maxi gown with an elegant slit, paired with gold high heels. She squats entirely inside the plastic shell, smiling alluringly at the camera. Background features luxury Christmas decor, warm golden bokeh lights, dramatic studio lighting, glossy reflections, and a bold festive high-fashion editorial mood.",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-16",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "Admin",
+  "authorUrl": ""
+},
+{
+  "id": "1765860152502",
+  "title": "Christmas Gift 2",
+  "model": "Gemini",
+  "subModel": "Nano 2.5",
+  "imageUrl": "https://cdn.discordapp.com/attachments/1450274866354847917/1450346651590983680/nanobanana_1765858591586.png?ex=69423413&is=6940e293&hm=3786fceb9b7e119220f58e5058df1230a3645efb6d58b6bd061f1d1f1bd9d3f8&",
+  "prompt": "Create a 9:16 AR high-end studio photo of a beautiful woman matching the [uploaded image], fully enclosed inside a crystal-clear acrylic display box designed as premium holiday packaging. She highlights a full bust and wears an emerald green velvet V-neck maxi gown with a body-hugging cut, paired with metallic heels. She is squatting completely inside the acrylic box, smiling confidently at the camera. The box is topped with an elegant ribbon bow. Studio background features minimalist Christmas decor, fairy lights, cinematic lighting, and a luxury editorial atmosphere.",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-16",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "Admin",
+  "authorUrl": ""
+},
+{
+  "id": "1765859879239",
+  "title": "Christmas Gift 1",
+  "model": "Gemini",
+  "subModel": "Nano 2.5",
+  "imageUrl": "https://cdn.discordapp.com/attachments/1450274866354847917/1450346652228387040/nanobanana_1765858591585.png?ex=69423414&is=6940e294&hm=1b096fc51c46b66d084304c1a83622e0d56f5458d5bd5222e95ccd2c9bc76035&",
+  "prompt": "Create a 9:16 AR high-end studio photo of a beautiful woman matching the [uploaded image], fully enclosed inside a soft transparent plastic luxury packaging bag, with no part of her body outside the plastic. She features a full bust silhouette and wears a deep red satin V-neck maxi gown with a fitted waist, paired with red high heels. She squats entirely inside the plastic packaging, smiling at the camera. The packaging is finished with an oversized red bow. Background includes glowing Christmas lights, pine branches, warm golden bokeh, dramatic cinematic studio lighting, glossy plastic reflections, and a festive high-fashion editorial mood.",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-16",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "LOKAL1",
+  "authorUrl": ""
+},  
+{
   "id": "1765843267065",
   "title": "Worm Eye Shot Everyday Life",
   "model": "Gemini",
@@ -204,3 +279,4 @@
     "tags": ["LOKAL"]
   }
 ]
+
