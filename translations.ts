@@ -95,6 +95,7 @@ export const translations = {
     },
     footer: {
       rights: "All rights reserved."
+      subtitle: "⬇ Follow Us Via The Link Below ⬇"
     },
     admin: {
       title: "Android / Web Generator",
