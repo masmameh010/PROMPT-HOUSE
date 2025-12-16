@@ -160,6 +160,10 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             <a href="https://www.threads.net/@ai.gabut" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-primary transition-colors">
               Threads @ai.gabut
             </a>
+            <span className="text-blue-700">|</span>
+            <a href="Https://facebook.com/dszmjk" target="_blank" rel="noreferrer" className="text-black-400 hover:text-primary transition-colors">
+              Facebook
+            </a>
           </div>
 
           <div className="text-xs text-gray-600">
