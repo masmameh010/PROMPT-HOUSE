@@ -25,11 +25,13 @@ export const Collections: React.FC = () => {
       const matchesModel = selectedModel === 'All' || item.model === selectedModel;
       
       const searchLower = searchQuery.toLowerCase();
+      // Update logic pencarian: Cek Judul, Prompt, Tags, DAN ID
       const titleMatch = item.title.toLowerCase().includes(searchLower);
       const promptMatch = item.prompt?.toLowerCase().includes(searchLower) || false;
       const tagsMatch = item.tags?.some(tag => tag.toLowerCase().includes(searchLower)) || false;
+      const idMatch = item.id.toLowerCase().includes(searchLower);
       
-      return matchesModel && (titleMatch || promptMatch || tagsMatch);
+      return matchesModel && (titleMatch || promptMatch || tagsMatch || idMatch);
     });
   }, [selectedModel, searchQuery, prompts]);
 
@@ -120,6 +122,11 @@ export const Collections: React.FC = () => {
               >
                 {/* Image */}
                 <div className="relative overflow-hidden aspect-auto">
+                  {/* ID Badge di Pojok Kiri Atas Gambar */}
+                  <div className="absolute top-2 left-2 bg-black/60 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded-md border border-white/10 z-20 shadow-sm">
+                    #{item.id}
+                  </div>
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10" />
                   <img 
                     src={getOptimizedImageUrl(item.imageUrl)} 

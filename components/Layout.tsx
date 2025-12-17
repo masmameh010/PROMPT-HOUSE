@@ -152,13 +152,32 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           <h2 className="text-2xl font-bold mb-2">IMAJINASI LOKAL</h2>
           <p className="text-gray-400 text-sm mb-8">{t.home.subtitle}</p>
           
-          <div className="flex justify-center gap-6 mb-8">
-            <a href="https://instagram.com/imajinasi.lokal" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+          <div className="flex flex-wrap justify-center gap-6 mb-8">
+            <a 
+              href="https://instagram.com/imajinasi.lokal" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="text-blue-500 hover:text-blue-400 transition-colors font-medium"
+            >
               Instagram @imajinasi.lokal
             </a>
             <span className="text-gray-700">|</span>
-            <a href="https://www.threads.net/@ai.gabut" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+            <a 
+              href="https://www.threads.net/@ai.gabut" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="text-blue-500 hover:text-blue-400 transition-colors font-medium"
+            >
               Threads @ai.gabut
+            </a>
+            <span className="text-gray-700">|</span>
+            <a 
+              href="https://facebook.com/dszmjk" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="text-blue-500 hover:text-blue-400 transition-colors font-medium"
+            >
+              Facebook
             </a>
           </div>
 
