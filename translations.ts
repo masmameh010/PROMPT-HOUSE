@@ -56,7 +56,9 @@ export const translations = {
       step2: "Isi Form",
       step2_desc: "Isi data di sini, lalu klik Generate.",
       step3: "Update JSON",
-      step3_desc: "Copy kode di kanan, paste ke 'public/prompts.json' di GitHub."
+      step3_desc: "Copy kode di kanan, paste ke 'public/prompts.json' di GitHub.",
+      discordWarning: "⚠️ JANGAN pakai link Discord. Link akan mati dalam 24 jam.",
+      urlError: "⚠️ Link harus berakhiran .jpg, .png, atau .webp. Gunakan 'Copy Image Address' / 'Salin Alamat Gambar'."
     }
   },
   en: {
@@ -116,7 +118,9 @@ export const translations = {
       step2: "Fill Form",
       step2_desc: "Fill details here, click Generate.",
       step3: "Update JSON",
-      step3_desc: "Copy code on right, paste to 'public/prompts.json' on GitHub."
+      step3_desc: "Copy code on right, paste to 'public/prompts.json' on GitHub.",
+      discordWarning: "⚠️ DO NOT use Discord links. They expire in 24h.",
+      urlError: "⚠️ Link must end in .jpg, .png, or .webp. Please use 'Copy Image Address'."
     }
   }
 };

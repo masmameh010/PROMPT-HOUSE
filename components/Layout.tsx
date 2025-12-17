@@ -150,19 +150,15 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         <div className="max-w-7xl mx-auto px-4 text-center">
           <img src={LOGO_URL} alt="Logo" className="h-16 w-auto mx-auto mb-6 opacity-80 grayscale hover:grayscale-0 transition-all" />
           <h2 className="text-2xl font-bold mb-2">IMAJINASI LOKAL</h2>
-          <p className="text-gray-400 text-sm mb-8">⬇ Follow Kami Lewat Link Di Bawah ini ⬇</p>
+          <p className="text-gray-400 text-sm mb-8">{t.home.subtitle}</p>
           
           <div className="flex justify-center gap-6 mb-8">
             <a href="https://instagram.com/imajinasi.lokal" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-primary transition-colors">
               Instagram @imajinasi.lokal
             </a>
-            <span className="text-blue-700">|</span>
+            <span className="text-gray-700">|</span>
             <a href="https://www.threads.net/@ai.gabut" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-primary transition-colors">
               Threads @ai.gabut
-            </a>
-            <span className="text-blue-700">|</span>
-            <a href="Https://facebook.com/dszmjk" target="_blank" rel="noreferrer" className="text-black-400 hover:text-primary transition-colors">
-              Facebook 
             </a>
           </div>
 

@@ -22,6 +22,17 @@ GitHub membutuhkan file `.github/ISSUE_TEMPLATE/add_prompt.yml` agar link terseb
 
 ---
 
+## ⚠️ PERINGATAN GAMBAR (KENAPA GAMBAR HILANG?)
+
+**JANGAN GUNAKAN LINK DISCORD** (`cdn.discordapp.com/...`).
+Link Discord sekarang memiliki batas waktu (expired) sekitar 24 jam. Setelah itu gambar akan hilang (broken).
+
+**Gunakan salah satu cara ini:**
+1. **GitHub Issue (Recommended):** Saat isi form contribute, drag & drop gambar ke text area. GitHub akan membuat link permanen.
+2. **Imgur / Postimages:** Upload manual ke situs hosting gambar gratis, lalu copy "Direct Link".
+
+---
+
 ## ⚡ PANDUAN AWAL (SETUP PERTAMA KALI)
 
 Agar fitur **Upload via GitHub Issues** berjalan lancar, Anda wajib mengaktifkan izin di pengaturan Repository GitHub Anda.

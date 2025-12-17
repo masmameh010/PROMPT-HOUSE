@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Copy, Check, FileJson, Image as ImageIcon, User, Eye, ExternalLink, Github, RefreshCw, Plus, RotateCcw, Hash } from 'lucide-react';
+import { Copy, Check, FileJson, Image as ImageIcon, User, Eye, ExternalLink, Github, RefreshCw, Plus, RotateCcw, Hash, AlertTriangle, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { AiModel, PromptItem } from '../types';
 
@@ -28,6 +28,17 @@ export const AdminHelper: React.FC = () => {
   const [lastDbId, setLastDbId] = useState(0); // Melacak ID terakhir di DB real
   const [localIncrement, setLocalIncrement] = useState(1); // Melacak berapa item dibuat sesi ini
 
+  // Validasi URL Gambar
+  const isDiscordUrl = formData.imageUrl.includes('discordapp');
+  // Cek apakah URL valid tapi tidak berakhiran ekstensi gambar (tanda bukan direct link)
+  // Kecuali link Google Drive atau link lokal yang mungkin tidak punya ekstensi standar
+  const isValidExtension = (url: string) => {
+    if (!url) return true; // Kosong dianggap valid dulu sampai diisi
+    if (!url.startsWith('http')) return true; // Lokal path
+    return /\.(jpg|jpeg|png|webp|gif)$/i.test(url) || url.includes('drive.google.com') || url.includes('githubusercontent');
+  };
+  const isInvalidFormat = !isValidExtension(formData.imageUrl);
+
   // 1. Ambil data terakhir dari prompts.json saat load
   useEffect(() => {
     const fetchLatestId = async () => {
@@ -40,10 +51,7 @@ export const AdminHelper: React.FC = () => {
           data.forEach((item: any) => {
             const numId = parseInt(item.id, 10);
             if (!isNaN(numId) && numId > maxId) {
-               // Filter: hanya anggap ID sebagai angka urut jika di bawah timestamp (misal < 100000)
-               // atau jika user memang sudah merubah semua ID jadi angka kecil.
-               // Di sini kita ambil max value number apa saja.
-               if (numId < 1700000000000) { // Asumsi ID timestamp pasti besar
+               if (numId < 1700000000000) { 
                   maxId = numId;
                }
             }
@@ -213,10 +221,33 @@ export const AdminHelper: React.FC = () => {
                   value={formData.imageUrl}
                   onChange={handleChange}
                   placeholder="https://i.imgur.com/..."
-                  className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-2 text-white focus:border-primary focus:outline-none font-mono text-xs"
+                  className={`w-full bg-black/40 border rounded-lg px-4 py-2 text-white focus:border-primary focus:outline-none font-mono text-xs ${
+                    isDiscordUrl || isInvalidFormat ? 'border-red-500' : 'border-white/10'
+                  }`}
                 />
+                
+                {/* Warning Discord */}
+                {isDiscordUrl && (
+                  <div className="mt-2 p-2 bg-red-900/20 border border-red-500/30 rounded flex items-start gap-2">
+                     <AlertTriangle size={14} className="text-red-500 flex-shrink-0 mt-0.5" />
+                     <p className="text-[10px] text-red-200">
+                       {t.admin.discordWarning}
+                     </p>
+                  </div>
+                )}
+
+                {/* Warning Invalid Extension */}
+                {isInvalidFormat && !isDiscordUrl && formData.imageUrl.length > 5 && (
+                  <div className="mt-2 p-2 bg-yellow-900/20 border border-yellow-500/30 rounded flex items-start gap-2">
+                     <AlertCircle size={14} className="text-yellow-500 flex-shrink-0 mt-0.5" />
+                     <p className="text-[10px] text-yellow-200">
+                       {t.admin.urlError}
+                     </p>
+                  </div>
+                )}
+                
                 <p className="text-[10px] text-gray-500 mt-1">
-                  *Tips: Upload gambar ke Discord/Cloudinary lalu copy link-nya ke sini.
+                  *Recommended: Upload ke GitHub Issue (Trik Drag & Drop) atau Postimages.
                 </p>
               </div>
 
@@ -289,6 +320,9 @@ export const AdminHelper: React.FC = () => {
                   src={formData.imageUrl || "https://via.placeholder.com/400x600?text=Preview+Image"} 
                   alt="Preview" 
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://via.placeholder.com/400x600?text=Error+Loading+Image";
+                  }}
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
                   <p className="text-white font-bold truncate">{formData.title || "Judul Gambar"}</p>
