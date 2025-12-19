@@ -165,6 +165,66 @@
   "authorUrl": ""
 },
 {
+  "id": "033",
+  "title": "Couple Scene ",
+  "model": "Gemini",
+  "subModel": "Nano 2.5",
+  "imageUrl": "https://i.imgur.com/G3jt2N6.jpg",
+  "prompt": "A curvaceous East Asian girl [uploaded image] with long,  dark brown hair draped over her shoulders, wearing a beige knit hat and a light pink oversized sweatshirt, is lying back on a bay window covered with a plaid blanket. She is holding a phone and taking a selfie, her lips curled into a playful arc and her eyes crescent-shaped. In the background, there is a white fabric bookshelf and a light gray carpet scattered with throw pillows. Her  Asian boyfriend leans over from behind her, his hands resting gently on her waist, his fingertips casually brushing the edge of her sweatshirt.\n\nIn the style of a Japanese lifestyle selfie, sunlight streams through sheer curtains, casting soft patches of light. The colors are fresh, as if a faint filter has been applied, and the image quality is so clear that the fine fuzz on her sweatshirt is visible. A sense of casual intimacy is hidden within the relaxed atmosphere of their daily life together.",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-19",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "Masmameh",
+  "authorUrl": ""
+},
+{
+  "id": "034",
+  "title": "Hidden Teacher",
+  "model": "Gemini",
+  "subModel": "Nano 2.5",
+  "imageUrl": "https://i.imgur.com/hyIVnJf.jpg",
+  "prompt": "Akira Kurosawa's cinematic aesthetics: an ordinary Change Room scene, bathed in midday sunlight; a 18-year-old indonesian boy in a polo shirt (with \"LOKAL BASKETBALL\" written on the back) opens a wardrobe from behind; inside, a 1.7-meter-tall Indonesian female teacher [uploaded image] is half-crouched and curled up, covering her mouth; she wears red punk bracelets, a black silk blindfold, a black and red-green striped tank top, a beige silk pencil skirt, and a red punk choker; the shot is taken from a slightly tipsy, upward angle; the wardrobe is somewhat dimly lit and cluttered; the shot is taken from a slightly downward angle.",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-19",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "Masmameh",
+  "authorUrl": ""
+},
+{
+  "id": "035",
+  "title": "in RED ❤ we Trust",
+  "model": "Gemini",
+  "subModel": "Nano 2.5",
+  "imageUrl": "https://i.imgur.com/dObDiFT.jpg",
+  "prompt": "A young indonesian woman [uploaded image] sits on a red chair against a pure matte red background. She has vibrant, long black-red hair with blunt bangs and long red manicured nails. She is wearing a specially designed black silk top, red silk tights, and pure matte red, low-cut, ultra-high stiletto heels. Her arms are crossed over her chest, and her legs are elegantly curled up, displaying a confident and captivating posture. The pure red background creates a strong visual impact. The image utilizes a high-contrast fashion photography style with rich layers of light and shadow. The overall palette is predominantly red, forming a unified color theme. Icy glamour, Tragic Beauty (BE Aesthetic), Avant-garde art, low-key lighting, side lighting, high contrast, high color saturation.",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-19",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "ASN",
+  "authorUrl": ""
+},
+{
+  "id": "036",
+  "title": "Nature G 1",
+  "model": "Gemini",
+  "subModel": "V1",
+  "imageUrl": "https://i.imgur.com/btwKSOR.jpg",
+  "prompt": "Granular luminescence, grayish-green tones, delicate texture, close-up portrait of the face. The subject's hair is fine, showing natural waves. The person's face is illuminated by light, giving a warm feeling. Sunlight casts dappled shadows on the person's face through lotus leaves. The lotus leaves are dark emerald green, the shape of the leaves is slender, faint glow in the dark night, giving a cozy and slightly melancholic feeling. Chinese beauty, high attractiveness, clavicle focus, alluring, flawlessly pale like jade, gentle, traditional Chinese aesthetic, collarbone photo, high-definition dreamy beautiful style, image of a young ancient Chinese woman, 22 years old [uploaded image], stunning beauty, model aesthetic. Extremely beautiful face, cool ivory skin, delicate and vulnerable appearance, fine and smooth skin, cool pale skin, classical beauty features, Late Tang dynasty decadent atmosphere. Photo style is portraiture. Large scene composition, film photography. Atmospheric, emotional piece, glowing hair strands, messy hair, wide-angle lens. Outdoor natural landscape, dappled light and shadow. High contrast. Dreamcore aesthetic, black mist filter. Many flowers, asters, predominantly dark tones.",
+  "negativePrompt": "",
+  "dateAdded": "2025-12-19",
+  "tags": [
+    "LOKAL"
+  ],
+  "author": "Admin",
+  "authorUrl": ""
+},
+{
   "id": "019",
   "title": "Christmas Gift 3",
   "model": "Gemini",
