@@ -49,6 +49,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               <a href="#/collections" className={`flex items-center gap-2 transition-colors ${isActive('/collections')}`}>
                 <Layers size={18} /> {t.nav.collections}
               </a>
+              <a href="#/favorites" className={`flex items-center gap-2 transition-colors ${isActive('/favorites')}`}>
+                <Heart size={18} /> {t.nav.favorites}
+              </a>
               
               <a 
                 href="https://lynk.id/imajinasilokal1" 
@@ -118,6 +121,13 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 className="block px-3 py-4 text-base font-medium text-white hover:bg-white/10 rounded-md"
               >
                 {t.nav.collections}
+              </a>
+              <a 
+                href="#/favorites" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block px-3 py-4 text-base font-medium text-white hover:bg-white/10 rounded-md"
+              >
+                {t.nav.favorites}
               </a>
               <a 
                 href="https://lynk.id/imajinasilokal1" 

@@ -3,6 +3,7 @@ export const translations = {
     nav: {
       home: "Beranda",
       collections: "Koleksi",
+      favorites: "Favorit",
       shop: "Toko",
       donate: "Donasi",
       admin: "Admin Tool"
@@ -25,7 +26,10 @@ export const translations = {
       searchPlaceholder: "Cari nomor #ID, judul, atau tag...",
       noResults: "Tidak ada prompt yang cocok dengan pencarian Anda.",
       reset: "Reset Filter",
-      featured: "SPONSOR / REKOMENDASI"
+      featured: "SPONSOR / REKOMENDASI",
+      favTitle: "Prompt Favorit Kamu",
+      noFavs: "Kamu belum punya prompt favorit.",
+      goExplore: "Mulai Jelajah"
     },
     modal: {
       prompt: "Prompt",
@@ -68,6 +72,7 @@ export const translations = {
     nav: {
       home: "Home",
       collections: "Collections",
+      favorites: "Favorites",
       shop: "Shop",
       donate: "Donate",
       admin: "Admin Tool"
@@ -90,7 +95,10 @@ export const translations = {
       searchPlaceholder: "Search #ID, title, or tags...",
       noResults: "No prompts match your search.",
       reset: "Reset Filter",
-      featured: "FEATURED / ADS"
+      featured: "FEATURED / ADS",
+      favTitle: "Your Favorite Prompts",
+      noFavs: "You don't have any favorite prompts yet.",
+      goExplore: "Start Exploring"
     },
     modal: {
       prompt: "Prompt",
