@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
-// Added Sparkles to the list of icons imported from lucide-react
 import { X, Copy, Check, Tag, User, ExternalLink, Coffee, ShoppingCart, Heart, Sparkles } from 'lucide-react';
 import { PromptItem } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getOptimizedImageUrl } from '../utils/imageHelper';
+import { useLikes } from '../contexts/LikesContext';
 
 interface PromptModalProps {
   item: PromptItem;
@@ -14,6 +13,7 @@ interface PromptModalProps {
 export const PromptModal: React.FC<PromptModalProps> = ({ item, onClose }) => {
   const [copiedField, setCopiedField] = useState<string | null>(null);
   const { t } = useLanguage();
+  const { toggleLike, isLiked } = useLikes();
 
   const handleCopy = (text: string, field: string) => {
     navigator.clipboard.writeText(text);
@@ -50,15 +50,28 @@ export const PromptModal: React.FC<PromptModalProps> = ({ item, onClose }) => {
               <span className="text-[10px] text-gray-500 font-mono">ID #{item.id}</span>
             </div>
             
-            {/* MONETISASI: Traktir Kreator Link (Contoh: Saweria/Lynk.id) */}
-            <a 
-              href="https://lynk.id/imajinasilokal1/s/12o34vm546ld" 
-              target="_blank" 
-              rel="noreferrer"
-              className="flex items-center gap-2 text-xs font-bold text-pink-400 hover:text-pink-300 transition-colors bg-pink-500/10 px-3 py-1.5 rounded-full border border-pink-500/20"
-            >
-              <Coffee size={14} /> {t.modal.supportAuthor}
-            </a>
+            <div className="flex items-center gap-2">
+              <button 
+                onClick={() => toggleLike(item.id)}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all active:scale-110 ${
+                  isLiked(item.id) 
+                    ? 'bg-pink-500/20 text-pink-500 border-pink-500/50 shadow-lg shadow-pink-500/10' 
+                    : 'bg-white/5 text-gray-400 border-white/10 hover:bg-white/10'
+                }`}
+              >
+                <Heart size={16} fill={isLiked(item.id) ? "currentColor" : "none"} />
+                <span className="text-xs font-bold">{isLiked(item.id) ? "Liked" : "Like"}</span>
+              </button>
+
+              <a 
+                href="https://lynk.id/imajinasilokal1/s/12o34vm546ld" 
+                target="_blank" 
+                rel="noreferrer"
+                className="flex items-center gap-2 text-xs font-bold text-pink-400 hover:text-pink-300 transition-colors bg-pink-500/10 px-3 py-1.5 rounded-full border border-pink-500/20"
+              >
+                <Coffee size={14} /> {t.modal.supportAuthor}
+              </a>
+            </div>
           </div>
 
           <h2 className="text-3xl font-bold mb-2 text-white leading-tight">{item.title}</h2>
@@ -80,7 +93,6 @@ export const PromptModal: React.FC<PromptModalProps> = ({ item, onClose }) => {
             )}
           </div>
 
-          {/* MONETISASI: Upselling Premium Bundle */}
           <div className="mb-8 p-4 bg-gradient-to-r from-blue-900/40 to-purple-900/40 border border-blue-500/30 rounded-xl">
              <div className="flex justify-between items-center gap-4">
                 <div>

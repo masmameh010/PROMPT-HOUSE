@@ -1,10 +1,11 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Filter, Grid, AlertTriangle, Loader2, Sparkles, ShoppingCart, ExternalLink } from 'lucide-react';
+import { Search, Filter, Grid, AlertTriangle, Loader2, Sparkles, ShoppingCart, Heart } from 'lucide-react';
 import { AiModel, PromptItem } from '../types';
 import { PromptModal } from '../components/PromptModal';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getOptimizedImageUrl } from '../utils/imageHelper';
 import { usePrompts } from '../hooks/usePrompts';
+import { useLikes } from '../contexts/LikesContext';
 
 export const Collections: React.FC = () => {
   const [selectedModel, setSelectedModel] = useState<AiModel | 'All'>('All');
@@ -12,6 +13,7 @@ export const Collections: React.FC = () => {
   const [selectedItem, setSelectedItem] = useState<PromptItem | null>(null);
   const { t } = useLanguage();
   const { prompts, loading } = usePrompts();
+  const { toggleLike, isLiked } = useLikes();
 
   const models = ['All', ...Object.values(AiModel)];
 
@@ -96,10 +98,6 @@ export const Collections: React.FC = () => {
           <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
             {filteredPrompts.map((item, index) => (
               <React.Fragment key={item.id}>
-                {/* 
-                  ADS / SPONSOR CARD: Muncul setiap 6 item 
-                  Ini adalah strategi monetisasi (Affiliate/Sponsor)
-                */}
                 {index > 0 && index % 6 === 0 && (
                   <a 
                     href="https://lynk.id/imajinasilokal1" 
@@ -121,13 +119,13 @@ export const Collections: React.FC = () => {
                 )}
 
                 <div 
-                  onClick={() => setSelectedItem(item)}
                   className="break-inside-avoid group relative bg-card rounded-xl overflow-hidden cursor-pointer border border-white/5 hover:border-primary/50 transition-all hover:shadow-2xl hover:shadow-primary/10"
                 >
-                  <div className="relative overflow-hidden aspect-auto">
+                  <div className="relative overflow-hidden aspect-auto" onClick={() => setSelectedItem(item)}>
                     <div className="absolute top-2 left-2 bg-black/60 backdrop-blur-md text-white text-[10px] font-mono font-bold px-2 py-1 rounded-md border border-white/10 z-20 shadow-sm">
                       #{item.id}
                     </div>
+                    
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10" />
                     <img 
                       src={getOptimizedImageUrl(item.imageUrl)} 
@@ -135,12 +133,29 @@ export const Collections: React.FC = () => {
                       className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500 min-h-[200px] bg-white/5"
                       loading="lazy"
                     />
+                    
                     <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
                       <p className="text-white font-bold text-lg truncate">{item.title}</p>
                       <p className="text-primary text-xs font-mono mt-1">{item.subModel}</p>
                     </div>
                   </div>
-                  <div className="p-4 bg-card">
+
+                  {/* Like Button Floating */}
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleLike(item.id);
+                    }}
+                    className={`absolute top-2 right-2 z-30 p-2 rounded-full backdrop-blur-md transition-all transform active:scale-125 ${
+                      isLiked(item.id) 
+                        ? 'bg-pink-500 text-white shadow-lg shadow-pink-500/50' 
+                        : 'bg-black/40 text-gray-300 hover:text-pink-400 border border-white/10'
+                    }`}
+                  >
+                    <Heart size={18} fill={isLiked(item.id) ? "currentColor" : "none"} />
+                  </button>
+
+                  <div className="p-4 bg-card" onClick={() => setSelectedItem(item)}>
                     <h3 className="font-semibold text-gray-200 line-clamp-1 mb-2">{item.title}</h3>
                     <div className="flex items-center gap-2">
                       <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-white/10 text-gray-400">

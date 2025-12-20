@@ -4,6 +4,7 @@ import { Home } from './pages/Home';
 import { Collections } from './pages/Collections';
 import { AdminHelper } from './pages/AdminHelper';
 import { LanguageProvider } from './contexts/LanguageContext';
+import { LikesProvider } from './contexts/LikesContext';
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.hash.slice(1).split('?')[0] || '/');
@@ -36,9 +37,11 @@ function App() {
 
   return (
     <LanguageProvider>
-      <Layout>
-        {renderContent()}
-      </Layout>
+      <LikesProvider>
+        <Layout>
+          {renderContent()}
+        </Layout>
+      </LikesProvider>
     </LanguageProvider>
   );
 }
