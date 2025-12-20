@@ -22,16 +22,19 @@ export const translations = {
     collections: {
       title: "Koleksi Prompt",
       found: "prompt ditemukan",
-      searchPlaceholder: "Cari prompt, tag, atau gaya...",
+      searchPlaceholder: "Cari nomor #ID, judul, atau tag...",
       noResults: "Tidak ada prompt yang cocok dengan pencarian Anda.",
-      reset: "Reset Filter"
+      reset: "Reset Filter",
+      featured: "SPONSOR / REKOMENDASI"
     },
     modal: {
       prompt: "Prompt",
       negPrompt: "Negative Prompt",
       copy: "Salin",
       copied: "Tersalin!",
-      added: "Ditambahkan"
+      added: "Ditambahkan",
+      supportAuthor: "Traktir Kreator",
+      buyPremium: "Beli Paket Pro"
     },
     footer: {
       rights: "Hak Cipta Dilindungi."
@@ -84,16 +87,19 @@ export const translations = {
     collections: {
       title: "Prompt Collections",
       found: "prompts found",
-      searchPlaceholder: "Search prompts, tags, or styles...",
+      searchPlaceholder: "Search #ID, title, or tags...",
       noResults: "No prompts match your search.",
-      reset: "Reset Filter"
+      reset: "Reset Filter",
+      featured: "FEATURED / ADS"
     },
     modal: {
       prompt: "Prompt",
       negPrompt: "Negative Prompt",
       copy: "Copy",
       copied: "Copied!",
-      added: "Added"
+      added: "Added",
+      supportAuthor: "Support Creator",
+      buyPremium: "Buy Premium Pack"
     },
     footer: {
       rights: "All rights reserved."
